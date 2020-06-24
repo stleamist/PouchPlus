@@ -23,6 +23,7 @@ class WebAuthenticationSessionViewController: UIViewController, ASWebAuthenticat
 struct WebAuthenticationSessionHosting<Item: Identifiable>: UIViewControllerRepresentable {
     
     @Binding var item: Item?
+    var onDismiss: (() -> Void)? = nil
     var sessionBuilder: (Item) -> WebAuthenticationSession
     
     func makeUIViewController(context: Context) -> WebAuthenticationSessionViewController {
@@ -87,6 +88,7 @@ struct WebAuthenticationSessionHosting<Item: Identifiable>: UIViewControllerRepr
             parent.item = nil
             currentSession?.cancel()
             currentSession = nil
+            parent.onDismiss?()
         }
     }
 }
@@ -97,13 +99,14 @@ extension Bool: Identifiable {
 
 extension View {
     
-    func webAuthenticationSession(isPresented: Binding<Bool>, sessionBuilder: @escaping () -> WebAuthenticationSession) -> some View {
+    func webAuthenticationSession(isPresented: Binding<Bool>, onDismiss: (() -> Void)? = nil, sessionBuilder: @escaping () -> WebAuthenticationSession) -> some View {
         return self.background(
             WebAuthenticationSessionHosting(
                 item: Binding<Bool?>(
                     get: { isPresented.wrappedValue ? true : nil },
                     set: { isPresented.wrappedValue = ($0 != nil) }
                 ),
+                onDismiss: onDismiss,
                 sessionBuilder: { _ in
                     return sessionBuilder()
                 }
@@ -111,7 +114,7 @@ extension View {
         )
     }
     
-    func webAuthenticationSession<Item: Identifiable>(item: Binding<Item?>, sessionBuilder: @escaping (Item) -> WebAuthenticationSession) -> some View {
-        return self.background(WebAuthenticationSessionHosting(item: item, sessionBuilder: sessionBuilder))
+    func webAuthenticationSession<Item: Identifiable>(item: Binding<Item?>, onDismiss: (() -> Void)? = nil, sessionBuilder: @escaping (Item) -> WebAuthenticationSession) -> some View {
+        return self.background(WebAuthenticationSessionHosting(item: item, onDismiss: onDismiss, sessionBuilder: sessionBuilder))
     }
 }
