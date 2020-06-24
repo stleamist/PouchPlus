@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,23 @@
 		C74E623124A3104100C060A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E620624A3103F00C060A1 /* ContentView.swift */; };
 		C74E623224A3104100C060A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74E620724A3104000C060A1 /* Assets.xcassets */; };
 		C74E623324A3104100C060A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74E620724A3104000C060A1 /* Assets.xcassets */; };
+		C74E624424A317D700C060A1 /* FullScreenSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = C74E624324A317D700C060A1 /* FullScreenSafariView */; };
+		C74E624624A317EB00C060A1 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E624524A317EB00C060A1 /* LogInView.swift */; };
+		C74E624724A317EB00C060A1 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E624524A317EB00C060A1 /* LogInView.swift */; };
+		C74E624924A318F400C060A1 /* FilledButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E624824A318F400C060A1 /* FilledButtonStyle.swift */; };
+		C74E624A24A318F400C060A1 /* FilledButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E624824A318F400C060A1 /* FilledButtonStyle.swift */; };
+		C74E625024A3223900C060A1 /* ExtensionKit in Frameworks */ = {isa = PBXBuildFile; productRef = C74E624F24A3223900C060A1 /* ExtensionKit */; };
+		C74E625224A3240100C060A1 /* PouchPlusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E625124A3240100C060A1 /* PouchPlusModel.swift */; };
+		C74E625324A3240100C060A1 /* PouchPlusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E625124A3240100C060A1 /* PouchPlusModel.swift */; };
+		C74E625924A3256300C060A1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C74E625824A3256300C060A1 /* Alamofire */; };
+		C74E625B24A326A200C060A1 /* PocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E625A24A326A200C060A1 /* PocketService.swift */; };
+		C74E625C24A326A200C060A1 /* PocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E625A24A326A200C060A1 /* PocketService.swift */; };
+		C74E625E24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E625D24A35E8000C060A1 /* Publisher+AssignOptional.swift */; };
+		C74E625F24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E625D24A35E8000C060A1 /* Publisher+AssignOptional.swift */; };
+		C74E626124A35F9D00C060A1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E626024A35F9D00C060A1 /* Constant.swift */; };
+		C74E626224A35F9D00C060A1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E626024A35F9D00C060A1 /* Constant.swift */; };
+		C74E626A24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E626424A3945600C060A1 /* WebAuthenticationSessionHosting.swift */; };
+		C74E626B24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E626424A3945600C060A1 /* WebAuthenticationSessionHosting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +66,13 @@
 		C74E622724A3104100C060A1 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74E622B24A3104100C060A1 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		C74E622D24A3104100C060A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C74E624524A317EB00C060A1 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		C74E624824A318F400C060A1 /* FilledButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledButtonStyle.swift; sourceTree = "<group>"; };
+		C74E625124A3240100C060A1 /* PouchPlusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchPlusModel.swift; sourceTree = "<group>"; };
+		C74E625A24A326A200C060A1 /* PocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketService.swift; sourceTree = "<group>"; };
+		C74E625D24A35E8000C060A1 /* Publisher+AssignOptional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+AssignOptional.swift"; sourceTree = "<group>"; };
+		C74E626024A35F9D00C060A1 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		C74E626424A3945600C060A1 /* WebAuthenticationSessionHosting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAuthenticationSessionHosting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C74E625924A3256300C060A1 /* Alamofire in Frameworks */,
+				C74E624424A317D700C060A1 /* FullScreenSafariView in Frameworks */,
+				C74E625024A3223900C060A1 /* ExtensionKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +126,14 @@
 			isa = PBXGroup;
 			children = (
 				C74E620524A3103F00C060A1 /* PouchPlusApp.swift */,
+				C74E625124A3240100C060A1 /* PouchPlusModel.swift */,
 				C74E620624A3103F00C060A1 /* ContentView.swift */,
+				C74E624524A317EB00C060A1 /* LogInView.swift */,
+				C74E626324A3670400C060A1 /* Styles */,
+				C74E625A24A326A200C060A1 /* PocketService.swift */,
+				C74E626024A35F9D00C060A1 /* Constant.swift */,
+				C74E626424A3945600C060A1 /* WebAuthenticationSessionHosting.swift */,
+				C74E628E24A3B96000C060A1 /* Extensions */,
 				C74E620724A3104000C060A1 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -151,6 +185,22 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		C74E626324A3670400C060A1 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				C74E624824A318F400C060A1 /* FilledButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		C74E628E24A3B96000C060A1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C74E625D24A35E8000C060A1 /* Publisher+AssignOptional.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,6 +217,11 @@
 			dependencies = (
 			);
 			name = iOS;
+			packageProductDependencies = (
+				C74E624324A317D700C060A1 /* FullScreenSafariView */,
+				C74E624F24A3223900C060A1 /* ExtensionKit */,
+				C74E625824A3256300C060A1 /* Alamofire */,
+			);
 			productName = iOS;
 			productReference = C74E620C24A3104000C060A1 /* PouchPlus.app */;
 			productType = "com.apple.product-type.application";
@@ -258,6 +313,11 @@
 				Base,
 			);
 			mainGroup = C74E61FF24A3103E00C060A1;
+			packageReferences = (
+				C74E624224A317D700C060A1 /* XCRemoteSwiftPackageReference "FullScreenSafariView" */,
+				C74E624E24A3223900C060A1 /* XCRemoteSwiftPackageReference "ExtensionKit" */,
+				C74E625724A3256300C060A1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = C74E620D24A3104000C060A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -308,8 +368,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C74E624624A317EB00C060A1 /* LogInView.swift in Sources */,
 				C74E623024A3104100C060A1 /* ContentView.swift in Sources */,
 				C74E622E24A3104100C060A1 /* PouchPlusApp.swift in Sources */,
+				C74E625224A3240100C060A1 /* PouchPlusModel.swift in Sources */,
+				C74E625B24A326A200C060A1 /* PocketService.swift in Sources */,
+				C74E626A24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */,
+				C74E625E24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */,
+				C74E624924A318F400C060A1 /* FilledButtonStyle.swift in Sources */,
+				C74E626124A35F9D00C060A1 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,8 +384,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C74E624724A317EB00C060A1 /* LogInView.swift in Sources */,
 				C74E623124A3104100C060A1 /* ContentView.swift in Sources */,
 				C74E622F24A3104100C060A1 /* PouchPlusApp.swift in Sources */,
+				C74E625324A3240100C060A1 /* PouchPlusModel.swift in Sources */,
+				C74E625C24A326A200C060A1 /* PocketService.swift in Sources */,
+				C74E626B24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */,
+				C74E625F24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */,
+				C74E624A24A318F400C060A1 /* FilledButtonStyle.swift in Sources */,
+				C74E626224A35F9D00C060A1 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +770,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C74E624224A317D700C060A1 /* XCRemoteSwiftPackageReference "FullScreenSafariView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stleamist/FullScreenSafariView.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		C74E624E24A3223900C060A1 /* XCRemoteSwiftPackageReference "ExtensionKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stleamist/ExtensionKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.10;
+			};
+		};
+		C74E625724A3256300C060A1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C74E624324A317D700C060A1 /* FullScreenSafariView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C74E624224A317D700C060A1 /* XCRemoteSwiftPackageReference "FullScreenSafariView" */;
+			productName = FullScreenSafariView;
+		};
+		C74E624F24A3223900C060A1 /* ExtensionKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C74E624E24A3223900C060A1 /* XCRemoteSwiftPackageReference "ExtensionKit" */;
+			productName = ExtensionKit;
+		};
+		C74E625824A3256300C060A1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C74E625724A3256300C060A1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C74E620024A3103E00C060A1 /* Project object */;
 }

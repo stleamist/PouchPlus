@@ -1,15 +1,8 @@
-//
-//  ContentView.swift
-//  Shared
-//
-//  Created by 김동규 on 2020/06/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!").padding()
+        LogInView()
     }
 }
 

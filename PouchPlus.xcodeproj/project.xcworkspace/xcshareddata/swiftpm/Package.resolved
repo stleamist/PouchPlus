@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "2777659076fda38bd4e487739ee331c7a65b5924",
+          "version": "5.2.1"
+        }
+      },
+      {
+        "package": "ExtensionKit",
+        "repositoryURL": "https://github.com/stleamist/ExtensionKit.git",
+        "state": {
+          "branch": null,
+          "revision": "875e0d0c31b2571d483cedf868012697eaf1e635",
+          "version": "1.0.10"
+        }
+      },
+      {
+        "package": "FullScreenSafariView",
+        "repositoryURL": "https://github.com/stleamist/FullScreenSafariView.git",
+        "state": {
+          "branch": "develop",
+          "revision": "06cea96254e0d621082299aec45bc5ac3b286e03",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
