@@ -97,24 +97,46 @@ extension Bool: Identifiable {
     public var id: Bool { self }
 }
 
-extension View {
+struct WebAuthenticationSessionPresentationModifier: ViewModifier {
     
-    func webAuthenticationSession(isPresented: Binding<Bool>, onDismiss: (() -> Void)? = nil, sessionBuilder: @escaping () -> WebAuthenticationSession) -> some View {
-        return self.background(
-            WebAuthenticationSessionHosting(
-                item: Binding<Bool?>(
-                    get: { isPresented.wrappedValue ? true : nil },
-                    set: { isPresented.wrappedValue = ($0 != nil) }
-                ),
-                onDismiss: onDismiss,
-                sessionBuilder: { _ in
-                    return sessionBuilder()
-                }
-            )
+    @Binding var isPresented: Bool
+    var onDismiss: (() -> Void)? = nil
+    var sessionBuilder: () -> WebAuthenticationSession
+    
+    private var item: Binding<Bool?> {
+        .init(
+            get: { isPresented ? true : nil },
+            set: { isPresented = ($0 != nil) }
         )
     }
     
+    private func itemSessionBuilder(bool: Bool) -> WebAuthenticationSession {
+        return sessionBuilder()
+    }
+    
+    func body(content: Content) -> some View {
+        return content.background(WebAuthenticationSessionHosting(item: item, onDismiss: onDismiss, sessionBuilder: itemSessionBuilder))
+    }
+}
+
+struct ItemWebAuthenticationSessionPresentationModifier<Item: Identifiable>: ViewModifier {
+    
+    @Binding var item: Item?
+    var onDismiss: (() -> Void)? = nil
+    var sessionBuilder: (Item) -> WebAuthenticationSession
+    
+    func body(content: Content) -> some View {
+        return content.background(WebAuthenticationSessionHosting(item: $item, onDismiss: onDismiss, sessionBuilder: sessionBuilder))
+    }
+}
+
+extension View {
+    
+    func webAuthenticationSession(isPresented: Binding<Bool>, onDismiss: (() -> Void)? = nil, sessionBuilder: @escaping () -> WebAuthenticationSession) -> some View {
+        return self.modifier(WebAuthenticationSessionPresentationModifier(isPresented: isPresented, onDismiss: onDismiss, sessionBuilder: sessionBuilder))
+    }
+    
     func webAuthenticationSession<Item: Identifiable>(item: Binding<Item?>, onDismiss: (() -> Void)? = nil, sessionBuilder: @escaping (Item) -> WebAuthenticationSession) -> some View {
-        return self.background(WebAuthenticationSessionHosting(item: item, onDismiss: onDismiss, sessionBuilder: sessionBuilder))
+        return self.modifier(ItemWebAuthenticationSessionPresentationModifier(item: item, onDismiss: onDismiss, sessionBuilder: sessionBuilder))
     }
 }
