@@ -24,7 +24,7 @@ struct ItemList: View {
                 pouchModel.loadItems(query: .init())
             }
             .safariView(item: $selectedURL) { selectedURL in
-                selectedURL
+                SafariView(url: selectedURL)
             }
         }
     }
