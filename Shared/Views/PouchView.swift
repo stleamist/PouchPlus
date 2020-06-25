@@ -6,7 +6,33 @@ struct PouchView: View {
     @StateObject var pouchModel: PouchModel
     
     var body: some View {
-        Text("Hello, World!")
+        TabView {
+            Color.clear
+                .tabItem {
+                    Label("Items", systemImage: "heart.text.square.fill")
+                        .imageScale(.large)
+                }
+            Color.clear
+                .tabItem {
+                    Label("Favorites", systemImage: "star.fill")
+                        .imageScale(.large)
+                }
+            Color.clear
+                .tabItem {
+                    Label("Archive", systemImage: "archivebox.fill")
+                        .imageScale(.large)
+                }
+            Color.clear
+                .tabItem {
+                    Label("Tags", systemImage: "tag.fill")
+                        .imageScale(.large)
+                }
+            AccountView()
+                .tabItem {
+                    Label("Account", systemImage: "person.crop.circle.fill")
+                        .imageScale(.large)
+                }
+        }
     }
 }
 

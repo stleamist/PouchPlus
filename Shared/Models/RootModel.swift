@@ -8,4 +8,7 @@ extension RootModel {
     func setAccessTokenResponse(_ accessTokenResponse: PocketService.AccessTokenContent) {
         self.accessTokenResponse = accessTokenResponse
     }
+    func removeAccessTokenResponse() {
+        self.accessTokenResponse = nil
+    }
 }
