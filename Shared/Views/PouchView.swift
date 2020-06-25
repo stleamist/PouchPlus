@@ -7,7 +7,7 @@ struct PouchView: View {
     
     var body: some View {
         TabView {
-            Color.clear
+            ItemList()
                 .tabItem {
                     Label("Items", systemImage: "heart.text.square.fill")
                         .imageScale(.large)
@@ -33,6 +33,7 @@ struct PouchView: View {
                         .imageScale(.large)
                 }
         }
+        .environmentObject(pouchModel)
     }
 }
 

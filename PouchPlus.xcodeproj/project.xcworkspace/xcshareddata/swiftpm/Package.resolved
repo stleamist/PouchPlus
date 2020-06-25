@@ -20,12 +20,39 @@
         }
       },
       {
+        "package": "FavIcon",
+        "repositoryURL": "https://github.com/leonbreedt/FavIcon.git",
+        "state": {
+          "branch": null,
+          "revision": "5bf16aad3ea543891eaef7e8da2aa2f6bb29e6e4",
+          "version": "3.1.0"
+        }
+      },
+      {
         "package": "FullScreenSafariView",
         "repositoryURL": "https://github.com/stleamist/FullScreenSafariView.git",
         "state": {
           "branch": "develop",
-          "revision": "06cea96254e0d621082299aec45bc5ac3b286e03",
+          "revision": "2117f62bb0e55f0ecb85e2a8a73478d8db8da2c4",
           "version": null
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
+        "state": {
+          "branch": null,
+          "revision": "910d808ade2a576e1a292ceb458a6fa43f67f594",
+          "version": "5.14.0"
+        }
+      },
+      {
+        "package": "SwiftyJSON",
+        "repositoryURL": "https://github.com/SwiftyJSON/SwiftyJSON.git",
+        "state": {
+          "branch": null,
+          "revision": "2b6054efa051565954e1d2b9da831680026cd768",
+          "version": "5.0.0"
         }
       }
     ]

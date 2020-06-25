@@ -3,6 +3,7 @@ import Combine
 import AuthenticationServices
 import Alamofire
 import ExtensionKit
+import FullScreenSafariView
 
 // Identifiable protocol conformances for webAuthenticationSession item binding
 // TODO: 분리된 파일로 옮기기

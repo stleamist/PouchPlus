@@ -15,7 +15,6 @@
 		C74E623124A3104100C060A1 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E620624A3103F00C060A1 /* RootView.swift */; };
 		C74E623224A3104100C060A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74E620724A3104000C060A1 /* Assets.xcassets */; };
 		C74E623324A3104100C060A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74E620724A3104000C060A1 /* Assets.xcassets */; };
-		C74E624424A317D700C060A1 /* FullScreenSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = C74E624324A317D700C060A1 /* FullScreenSafariView */; };
 		C74E624624A317EB00C060A1 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E624524A317EB00C060A1 /* AuthenticationView.swift */; };
 		C74E624724A317EB00C060A1 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E624524A317EB00C060A1 /* AuthenticationView.swift */; };
 		C74E624924A318F400C060A1 /* FilledButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E624824A318F400C060A1 /* FilledButtonStyle.swift */; };
@@ -24,8 +23,6 @@
 		C74E625224A3240100C060A1 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E625124A3240100C060A1 /* AuthenticationModel.swift */; };
 		C74E625324A3240100C060A1 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E625124A3240100C060A1 /* AuthenticationModel.swift */; };
 		C74E625924A3256300C060A1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C74E625824A3256300C060A1 /* Alamofire */; };
-		C74E625B24A326A200C060A1 /* PocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E625A24A326A200C060A1 /* PocketService.swift */; };
-		C74E625C24A326A200C060A1 /* PocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E625A24A326A200C060A1 /* PocketService.swift */; };
 		C74E625E24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E625D24A35E8000C060A1 /* Publisher+AssignOptional.swift */; };
 		C74E625F24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E625D24A35E8000C060A1 /* Publisher+AssignOptional.swift */; };
 		C74E626124A35F9D00C060A1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E626024A35F9D00C060A1 /* Constant.swift */; };
@@ -36,6 +33,30 @@
 		C74E629124A42E1D00C060A1 /* PouchPlusError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E628F24A42E1D00C060A1 /* PouchPlusError.swift */; };
 		C74E629324A442F500C060A1 /* View+AlertErrorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E629224A442F500C060A1 /* View+AlertErrorItem.swift */; };
 		C74E629424A442F500C060A1 /* View+AlertErrorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E629224A442F500C060A1 /* View+AlertErrorItem.swift */; };
+		C753294D24A4D5CD006C1C08 /* String+ToURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753294B24A4D5CD006C1C08 /* String+ToURL.swift */; };
+		C753294E24A4D5CD006C1C08 /* String+ToURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753294B24A4D5CD006C1C08 /* String+ToURL.swift */; };
+		C753294F24A4D5CD006C1C08 /* Kingfisher+FaviconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753294C24A4D5CD006C1C08 /* Kingfisher+FaviconProvider.swift */; };
+		C753295024A4D5CD006C1C08 /* Kingfisher+FaviconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753294C24A4D5CD006C1C08 /* Kingfisher+FaviconProvider.swift */; };
+		C753295A24A4D5FF006C1C08 /* PocketService+AuthenticationInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753295524A4D5FF006C1C08 /* PocketService+AuthenticationInterceptor.swift */; };
+		C753295B24A4D5FF006C1C08 /* PocketService+AuthenticationInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753295524A4D5FF006C1C08 /* PocketService+AuthenticationInterceptor.swift */; };
+		C753295C24A4D5FF006C1C08 /* PocketService+AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753295624A4D5FF006C1C08 /* PocketService+AccessToken.swift */; };
+		C753295D24A4D5FF006C1C08 /* PocketService+AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753295624A4D5FF006C1C08 /* PocketService+AccessToken.swift */; };
+		C753295E24A4D5FF006C1C08 /* PocketService+RequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753295724A4D5FF006C1C08 /* PocketService+RequestToken.swift */; };
+		C753295F24A4D5FF006C1C08 /* PocketService+RequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753295724A4D5FF006C1C08 /* PocketService+RequestToken.swift */; };
+		C753296024A4D5FF006C1C08 /* PocketService+Retrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753295824A4D5FF006C1C08 /* PocketService+Retrieval.swift */; };
+		C753296124A4D5FF006C1C08 /* PocketService+Retrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753295824A4D5FF006C1C08 /* PocketService+Retrieval.swift */; };
+		C753296224A4D5FF006C1C08 /* PocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753295924A4D5FF006C1C08 /* PocketService.swift */; };
+		C753296324A4D5FF006C1C08 /* PocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753295924A4D5FF006C1C08 /* PocketService.swift */; };
+		C753296824A4D614006C1C08 /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753296524A4D614006C1C08 /* ItemRow.swift */; };
+		C753296924A4D614006C1C08 /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753296524A4D614006C1C08 /* ItemRow.swift */; };
+		C753296A24A4D614006C1C08 /* ItemThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753296624A4D614006C1C08 /* ItemThumbnail.swift */; };
+		C753296B24A4D614006C1C08 /* ItemThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753296624A4D614006C1C08 /* ItemThumbnail.swift */; };
+		C753296C24A4D614006C1C08 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753296724A4D614006C1C08 /* ItemList.swift */; };
+		C753296D24A4D614006C1C08 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753296724A4D614006C1C08 /* ItemList.swift */; };
+		C753297024A4D663006C1C08 /* FullScreenSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = C753296F24A4D663006C1C08 /* FullScreenSafariView */; };
+		C753297324A4D74B006C1C08 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C753297224A4D74B006C1C08 /* SwiftyJSON */; };
+		C753297624A4D77A006C1C08 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C753297524A4D77A006C1C08 /* KingfisherSwiftUI */; };
+		C753297924A4D7A8006C1C08 /* FavIcon in Frameworks */ = {isa = PBXBuildFile; productRef = C753297824A4D7A8006C1C08 /* FavIcon */; };
 		C780C69824A492780022BC5A /* ValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780C69724A492780022BC5A /* ValueLabel.swift */; };
 		C780C69924A492780022BC5A /* ValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780C69724A492780022BC5A /* ValueLabel.swift */; };
 		C786E57324A4733A00459204 /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57224A4733A00459204 /* RootModel.swift */; };
@@ -83,12 +104,21 @@
 		C74E624524A317EB00C060A1 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		C74E624824A318F400C060A1 /* FilledButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledButtonStyle.swift; sourceTree = "<group>"; };
 		C74E625124A3240100C060A1 /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
-		C74E625A24A326A200C060A1 /* PocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketService.swift; sourceTree = "<group>"; };
 		C74E625D24A35E8000C060A1 /* Publisher+AssignOptional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+AssignOptional.swift"; sourceTree = "<group>"; };
 		C74E626024A35F9D00C060A1 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C74E626424A3945600C060A1 /* WebAuthenticationSessionHosting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAuthenticationSessionHosting.swift; sourceTree = "<group>"; };
 		C74E628F24A42E1D00C060A1 /* PouchPlusError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchPlusError.swift; sourceTree = "<group>"; };
 		C74E629224A442F500C060A1 /* View+AlertErrorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AlertErrorItem.swift"; sourceTree = "<group>"; };
+		C753294B24A4D5CD006C1C08 /* String+ToURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ToURL.swift"; sourceTree = "<group>"; };
+		C753294C24A4D5CD006C1C08 /* Kingfisher+FaviconProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Kingfisher+FaviconProvider.swift"; sourceTree = "<group>"; };
+		C753295524A4D5FF006C1C08 /* PocketService+AuthenticationInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PocketService+AuthenticationInterceptor.swift"; sourceTree = "<group>"; };
+		C753295624A4D5FF006C1C08 /* PocketService+AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PocketService+AccessToken.swift"; sourceTree = "<group>"; };
+		C753295724A4D5FF006C1C08 /* PocketService+RequestToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PocketService+RequestToken.swift"; sourceTree = "<group>"; };
+		C753295824A4D5FF006C1C08 /* PocketService+Retrieval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PocketService+Retrieval.swift"; sourceTree = "<group>"; };
+		C753295924A4D5FF006C1C08 /* PocketService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PocketService.swift; sourceTree = "<group>"; };
+		C753296524A4D614006C1C08 /* ItemRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
+		C753296624A4D614006C1C08 /* ItemThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemThumbnail.swift; sourceTree = "<group>"; };
+		C753296724A4D614006C1C08 /* ItemList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
 		C780C69724A492780022BC5A /* ValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueLabel.swift; sourceTree = "<group>"; };
 		C786E57224A4733A00459204 /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
 		C786E57524A4744900459204 /* PouchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchModel.swift; sourceTree = "<group>"; };
@@ -102,8 +132,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C74E625924A3256300C060A1 /* Alamofire in Frameworks */,
-				C74E624424A317D700C060A1 /* FullScreenSafariView in Frameworks */,
 				C74E625024A3223900C060A1 /* ExtensionKit in Frameworks */,
+				C753297324A4D74B006C1C08 /* SwiftyJSON in Frameworks */,
+				C753297924A4D7A8006C1C08 /* FavIcon in Frameworks */,
+				C753297024A4D663006C1C08 /* FullScreenSafariView in Frameworks */,
+				C753297624A4D77A006C1C08 /* KingfisherSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +183,7 @@
 				C786E57B24A47F0A00459204 /* Models */,
 				C786E57C24A47F1800459204 /* Views */,
 				C74E626324A3670400C060A1 /* Styles */,
-				C74E625A24A326A200C060A1 /* PocketService.swift */,
+				C753295424A4D5FF006C1C08 /* Service */,
 				C74E628F24A42E1D00C060A1 /* PouchPlusError.swift */,
 				C74E626024A35F9D00C060A1 /* Constant.swift */,
 				C74E626424A3945600C060A1 /* WebAuthenticationSessionHosting.swift */,
@@ -220,8 +253,32 @@
 			children = (
 				C74E625D24A35E8000C060A1 /* Publisher+AssignOptional.swift */,
 				C74E629224A442F500C060A1 /* View+AlertErrorItem.swift */,
+				C753294C24A4D5CD006C1C08 /* Kingfisher+FaviconProvider.swift */,
+				C753294B24A4D5CD006C1C08 /* String+ToURL.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C753295424A4D5FF006C1C08 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C753295924A4D5FF006C1C08 /* PocketService.swift */,
+				C753295524A4D5FF006C1C08 /* PocketService+AuthenticationInterceptor.swift */,
+				C753295724A4D5FF006C1C08 /* PocketService+RequestToken.swift */,
+				C753295624A4D5FF006C1C08 /* PocketService+AccessToken.swift */,
+				C753295824A4D5FF006C1C08 /* PocketService+Retrieval.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C753296424A4D614006C1C08 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				C753296624A4D614006C1C08 /* ItemThumbnail.swift */,
+				C753296524A4D614006C1C08 /* ItemRow.swift */,
+				C753296724A4D614006C1C08 /* ItemList.swift */,
+			);
+			path = Item;
 			sourceTree = "<group>";
 		};
 		C780C69A24A492930022BC5A /* Components */ = {
@@ -248,6 +305,7 @@
 				C74E620624A3103F00C060A1 /* RootView.swift */,
 				C74E624524A317EB00C060A1 /* AuthenticationView.swift */,
 				C786E57824A475E300459204 /* PouchView.swift */,
+				C753296424A4D614006C1C08 /* Item */,
 				C786E57D24A4897500459204 /* AccountView.swift */,
 			);
 			path = Views;
@@ -270,9 +328,12 @@
 			);
 			name = iOS;
 			packageProductDependencies = (
-				C74E624324A317D700C060A1 /* FullScreenSafariView */,
 				C74E624F24A3223900C060A1 /* ExtensionKit */,
 				C74E625824A3256300C060A1 /* Alamofire */,
+				C753296F24A4D663006C1C08 /* FullScreenSafariView */,
+				C753297224A4D74B006C1C08 /* SwiftyJSON */,
+				C753297524A4D77A006C1C08 /* KingfisherSwiftUI */,
+				C753297824A4D7A8006C1C08 /* FavIcon */,
 			);
 			productName = iOS;
 			productReference = C74E620C24A3104000C060A1 /* PouchPlus.app */;
@@ -366,9 +427,12 @@
 			);
 			mainGroup = C74E61FF24A3103E00C060A1;
 			packageReferences = (
-				C74E624224A317D700C060A1 /* XCRemoteSwiftPackageReference "FullScreenSafariView" */,
 				C74E624E24A3223900C060A1 /* XCRemoteSwiftPackageReference "ExtensionKit" */,
 				C74E625724A3256300C060A1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C753296E24A4D663006C1C08 /* XCRemoteSwiftPackageReference "FullScreenSafariView" */,
+				C753297124A4D74B006C1C08 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				C753297424A4D77A006C1C08 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				C753297724A4D7A8006C1C08 /* XCRemoteSwiftPackageReference "FavIcon" */,
 			);
 			productRefGroup = C74E620D24A3104000C060A1 /* Products */;
 			projectDirPath = "";
@@ -420,21 +484,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C753295C24A4D5FF006C1C08 /* PocketService+AccessToken.swift in Sources */,
 				C786E57E24A4897500459204 /* AccountView.swift in Sources */,
+				C753296824A4D614006C1C08 /* ItemRow.swift in Sources */,
 				C74E624624A317EB00C060A1 /* AuthenticationView.swift in Sources */,
 				C786E57924A475E300459204 /* PouchView.swift in Sources */,
 				C780C69824A492780022BC5A /* ValueLabel.swift in Sources */,
 				C786E57624A4744900459204 /* PouchModel.swift in Sources */,
+				C753295E24A4D5FF006C1C08 /* PocketService+RequestToken.swift in Sources */,
+				C753294D24A4D5CD006C1C08 /* String+ToURL.swift in Sources */,
 				C74E629324A442F500C060A1 /* View+AlertErrorItem.swift in Sources */,
+				C753295A24A4D5FF006C1C08 /* PocketService+AuthenticationInterceptor.swift in Sources */,
 				C74E623024A3104100C060A1 /* RootView.swift in Sources */,
 				C74E622E24A3104100C060A1 /* PouchPlusApp.swift in Sources */,
 				C74E625224A3240100C060A1 /* AuthenticationModel.swift in Sources */,
 				C74E629024A42E1D00C060A1 /* PouchPlusError.swift in Sources */,
-				C74E625B24A326A200C060A1 /* PocketService.swift in Sources */,
 				C786E57324A4733A00459204 /* RootModel.swift in Sources */,
+				C753296C24A4D614006C1C08 /* ItemList.swift in Sources */,
 				C74E626A24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */,
+				C753296A24A4D614006C1C08 /* ItemThumbnail.swift in Sources */,
 				C74E625E24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */,
+				C753296224A4D5FF006C1C08 /* PocketService.swift in Sources */,
+				C753296024A4D5FF006C1C08 /* PocketService+Retrieval.swift in Sources */,
 				C74E624924A318F400C060A1 /* FilledButtonStyle.swift in Sources */,
+				C753294F24A4D5CD006C1C08 /* Kingfisher+FaviconProvider.swift in Sources */,
 				C74E626124A35F9D00C060A1 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,21 +516,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C753295D24A4D5FF006C1C08 /* PocketService+AccessToken.swift in Sources */,
 				C786E57F24A4897500459204 /* AccountView.swift in Sources */,
+				C753296924A4D614006C1C08 /* ItemRow.swift in Sources */,
 				C74E624724A317EB00C060A1 /* AuthenticationView.swift in Sources */,
 				C786E57A24A475E300459204 /* PouchView.swift in Sources */,
 				C780C69924A492780022BC5A /* ValueLabel.swift in Sources */,
 				C786E57724A4744900459204 /* PouchModel.swift in Sources */,
+				C753295F24A4D5FF006C1C08 /* PocketService+RequestToken.swift in Sources */,
+				C753294E24A4D5CD006C1C08 /* String+ToURL.swift in Sources */,
 				C74E629424A442F500C060A1 /* View+AlertErrorItem.swift in Sources */,
+				C753295B24A4D5FF006C1C08 /* PocketService+AuthenticationInterceptor.swift in Sources */,
 				C74E623124A3104100C060A1 /* RootView.swift in Sources */,
 				C74E622F24A3104100C060A1 /* PouchPlusApp.swift in Sources */,
 				C74E625324A3240100C060A1 /* AuthenticationModel.swift in Sources */,
 				C74E629124A42E1D00C060A1 /* PouchPlusError.swift in Sources */,
-				C74E625C24A326A200C060A1 /* PocketService.swift in Sources */,
 				C786E57424A4733A00459204 /* RootModel.swift in Sources */,
+				C753296D24A4D614006C1C08 /* ItemList.swift in Sources */,
 				C74E626B24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */,
+				C753296B24A4D614006C1C08 /* ItemThumbnail.swift in Sources */,
 				C74E625F24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */,
+				C753296324A4D5FF006C1C08 /* PocketService.swift in Sources */,
+				C753296124A4D5FF006C1C08 /* PocketService+Retrieval.swift in Sources */,
 				C74E624A24A318F400C060A1 /* FilledButtonStyle.swift in Sources */,
+				C753295024A4D5CD006C1C08 /* Kingfisher+FaviconProvider.swift in Sources */,
 				C74E626224A35F9D00C060A1 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -838,14 +920,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C74E624224A317D700C060A1 /* XCRemoteSwiftPackageReference "FullScreenSafariView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stleamist/FullScreenSafariView.git";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
 		C74E624E24A3223900C060A1 /* XCRemoteSwiftPackageReference "ExtensionKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stleamist/ExtensionKit.git";
@@ -862,14 +936,41 @@
 				minimumVersion = 5.2.1;
 			};
 		};
+		C753296E24A4D663006C1C08 /* XCRemoteSwiftPackageReference "FullScreenSafariView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stleamist/FullScreenSafariView.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		C753297124A4D74B006C1C08 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		C753297424A4D77A006C1C08 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.14.0;
+			};
+		};
+		C753297724A4D7A8006C1C08 /* XCRemoteSwiftPackageReference "FavIcon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/leonbreedt/FavIcon.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C74E624324A317D700C060A1 /* FullScreenSafariView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C74E624224A317D700C060A1 /* XCRemoteSwiftPackageReference "FullScreenSafariView" */;
-			productName = FullScreenSafariView;
-		};
 		C74E624F24A3223900C060A1 /* ExtensionKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C74E624E24A3223900C060A1 /* XCRemoteSwiftPackageReference "ExtensionKit" */;
@@ -879,6 +980,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C74E625724A3256300C060A1 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		C753296F24A4D663006C1C08 /* FullScreenSafariView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C753296E24A4D663006C1C08 /* XCRemoteSwiftPackageReference "FullScreenSafariView" */;
+			productName = FullScreenSafariView;
+		};
+		C753297224A4D74B006C1C08 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C753297124A4D74B006C1C08 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		C753297524A4D77A006C1C08 /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C753297424A4D77A006C1C08 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
+		};
+		C753297824A4D7A8006C1C08 /* FavIcon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C753297724A4D7A8006C1C08 /* XCRemoteSwiftPackageReference "FavIcon" */;
+			productName = FavIcon;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
