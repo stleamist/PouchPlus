@@ -13,7 +13,7 @@ struct RootView: View {
                 // “However, this does not mean that you should mark all of your @ObservedObject properties as @StateObject.
                 // In this last case, it might be the intent of the ItemList to create a fresh DataSource every time the view is redrawn.
                 // If you'd have marked Counter.dataSource as @StateObject the new instance would be ignored and your app might now have a new hidden bug.”
-                PouchView(pouchModel: PouchModel(accessTokenResponse: accessTokenResponse))
+                PouchView(pouchModel: PouchModel(accessTokenContent: accessTokenResponse))
             } else {
                 AuthenticationView(authenticationModel: AuthenticationModel())
             }

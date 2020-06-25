@@ -89,9 +89,14 @@ struct AuthenticationView: View {
                 authenticationModel.loadAccessToken()
             }
         }
-        .onReceive(authenticationModel.$accessTokenResult) { result in
-            if case .failure(let error) = result {
+        .onReceive(authenticationModel.$accessTokenContentResult) { result in
+            switch result {
+            case .success(let accessTokenResponse):
+                self.rootModel.setAccessTokenResponse(accessTokenResponse)
+            case .failure(let error):
                 self.accessTokenError = error
+            case .none:
+                ()
             }
         }
         .background(Group {

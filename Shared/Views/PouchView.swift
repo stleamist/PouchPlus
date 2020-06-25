@@ -10,8 +10,12 @@ struct PouchView: View {
     }
 }
 
-//struct PouchView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PouchView()
-//    }
-//}
+struct PouchView_Previews: PreviewProvider {
+    
+    static let sampleAccessTokenContent = PocketService.AccessTokenContent(accessToken: "5678defg-5678-defg-5678-defg56", username: "pocketuser")
+    @StateObject static var pouchModel = PouchModel(accessTokenContent: sampleAccessTokenContent)
+    
+    static var previews: some View {
+        PouchView(pouchModel: pouchModel)
+    }
+}

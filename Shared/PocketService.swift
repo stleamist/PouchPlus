@@ -45,12 +45,12 @@ struct PocketService {
         let redirectUri: String
     }
 
-    struct RequestTokenResponse: Decodable {
+    struct RequestTokenContent: Decodable {
         let code: String
         let state: String?
     }
     
-    func requestTokenPublisher(redirectURI: String) -> AnyPublisher<Result<String, AFError>, Never> {
+    func requestTokenPublisher(redirectURI: String) -> AnyPublisher<Result<RequestTokenContent, AFError>, Never> {
         return session.request(
             baseURL.appendingPathComponent("/oauth/request"),
             method: .post,
@@ -60,9 +60,8 @@ struct PocketService {
             ),
             encoder: parameterEncoder
         )
-        .publishDecodable(type: RequestTokenResponse.self, decoder: decoder)
+        .publishDecodable(type: RequestTokenContent.self, decoder: decoder)
         .result()
-        .map { $0.map(\.code) }
         .eraseToAnyPublisher()
     }
     
@@ -73,12 +72,12 @@ struct PocketService {
         let code: String
     }
 
-    struct AccessTokenResponse: Decodable {
+    struct AccessTokenContent: Decodable {
         let accessToken: String
         let username: String
     }
     
-    func accessTokenPublisher(requestToken: String) -> AnyPublisher<Result<String, AFError>, Never> {
+    func accessTokenPublisher(requestToken: String) -> AnyPublisher<Result<AccessTokenContent, AFError>, Never> {
         return session.request(
             baseURL.appendingPathComponent("/oauth/authorize"),
             method: .post,
@@ -88,9 +87,8 @@ struct PocketService {
             ),
             encoder: parameterEncoder
         )
-        .publishDecodable(type: AccessTokenResponse.self, decoder: decoder)
+        .publishDecodable(type: AccessTokenContent.self, decoder: decoder)
         .result()
-        .map { $0.map(\.accessToken) }
         .eraseToAnyPublisher()
     }
 }

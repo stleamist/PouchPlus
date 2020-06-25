@@ -13,7 +13,7 @@ class AuthenticationModel: ObservableObject {
     
     // MARK: Access Token
     
-    @Published private(set) var accessTokenResult: Result<String, PouchPlusError>?
+    @Published private(set) var accessTokenContentResult: Result<PocketService.AccessTokenContent, PouchPlusError>?
     
     // MARK: Cancellables
     private var cancellables = Set<AnyCancellable>()
@@ -24,7 +24,8 @@ extension AuthenticationModel {
     func loadRequestToken(redirectURI: String) {
         PocketService.shared
             .requestTokenPublisher(redirectURI: redirectURI)
-            .map { result in result.mapError { afError in .commonError(.networkError(afError)) } }
+            .map { $0.map(\.code) }
+            .map { $0.mapError({ .commonError(.networkError($0)) }) }
             .handleEvents(
                 receiveCompletion: { _ in self.requestTokenRequestIsInProgress = false },
                 receiveRequest: { _ in self.requestTokenRequestIsInProgress = true }
@@ -36,13 +37,13 @@ extension AuthenticationModel {
     func loadAccessToken() {
         guard let requestToken = try? requestTokenResult?.get() else {
             assertionFailure("The app attempted to load an access token before a request token is set. That's illegal.")
-            accessTokenResult = .failure(.developerError(.requestTokenNotSet))
+            accessTokenContentResult = .failure(.developerError(.requestTokenNotSet))
             return
         }
         PocketService.shared
             .accessTokenPublisher(requestToken: requestToken)
             .map { result in result.mapError { afError in .commonError(.networkError(afError)) } }
-            .assign(to: \.accessTokenResult, on: self)
+            .assign(to: \.accessTokenContentResult, on: self)
             .store(in: &cancellables)
     }
 }

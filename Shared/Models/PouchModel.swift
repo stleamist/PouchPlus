@@ -3,9 +3,9 @@ import Alamofire
 
 class PouchModel: ObservableObject {
     
-    private let accessTokenResponse: PocketService.AccessTokenResponse
+    private let accessTokenContent: PocketService.AccessTokenContent
     
-    init(accessTokenResponse: PocketService.AccessTokenResponse) {
-        self.accessTokenResponse = accessTokenResponse
+    init(accessTokenContent: PocketService.AccessTokenContent) {
+        self.accessTokenContent = accessTokenContent
     }
 }
