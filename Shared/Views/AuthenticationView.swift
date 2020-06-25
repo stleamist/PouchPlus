@@ -78,8 +78,7 @@ struct AuthenticationView: View {
                     "redirect_uri": Constant.redirectURI,
                     "force": mode?.rawValue.lowercased()
                 ])
-            let prefersEphemeralWebBrowserSession = (mode == .signUp)
-            return WebAuthenticationSession(url: url, callbackURLScheme: Constant.urlScheme, prefersEphemeralWebBrowserSession: prefersEphemeralWebBrowserSession) { callbackURL, error in
+            return WebAuthenticationSession(url: url, callbackURLScheme: Constant.urlScheme) { callbackURL, error in
                 if let error = error, (error as? ASWebAuthenticationSessionError)?.code != .canceledLogin {
                     self.authorizationError = .commonError(.webAuthenticationSessionError(error))
                     return
@@ -89,6 +88,7 @@ struct AuthenticationView: View {
                 }
                 authenticationModel.loadAccessToken(requestToken: requestToken)
             }
+            .prefersEphemeralWebBrowserSession(mode == .signUp)
         }
         .onReceive(authenticationModel.$accessTokenContentResult) { result in
             switch result {
