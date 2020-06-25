@@ -3,8 +3,6 @@ import Alamofire
 
 class PouchPlusModel: ObservableObject {
     
-    private var cancellables = Set<AnyCancellable>()
-    
     // MARK: Request Token
     
     // 에러 핸들링을 위해 String이 아닌 DataResponse를 퍼블리싱한다.
@@ -13,22 +11,18 @@ class PouchPlusModel: ObservableObject {
     // ProgressView를 위한 source of truth이다.
     @Published private(set) var requestTokenRequestIsInProgress = false
     
-    // request token을 동시애 여러 번 요청할 수 없도록 단일 AnyCancellable을 보관하고,
-    // 새로운 요청이 들어올 경우 이전 요청을 취소하도록 한다.
-    private var requestTokenRequestCancellable: AnyCancellable?
-    
     // MARK: Access Token
     
     @Published private(set) var accessTokenResult: Result<String, PouchPlusError>?
+    
+    // MARK: Cancellables
+    private var cancellables = Set<AnyCancellable>()
 }
 
 extension PouchPlusModel {
     
     func loadRequestToken(redirectURI: String) {
-        
-        requestTokenRequestCancellable?.cancel()
-        
-        requestTokenRequestCancellable = PocketService.shared
+        PocketService.shared
             .requestTokenPublisher(redirectURI: redirectURI)
             .map { result in result.mapError { afError in .commonError(.networkError(afError)) } }
             .handleEvents(
@@ -36,6 +30,7 @@ extension PouchPlusModel {
                 receiveRequest: { _ in self.requestTokenRequestIsInProgress = true }
             )
             .assign(to: \.requestTokenResult, on: self)
+            .store(in: &cancellables)
     }
     
     func loadAccessToken() {

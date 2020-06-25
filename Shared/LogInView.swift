@@ -112,6 +112,10 @@ struct LogInView: View {
         
         return Button(action: {
             self.mode = mode
+            // 버튼을 연달아 눌렀을 때 요청을 여러 번 전송하는 것을 막는다.
+            guard !self.model.requestTokenRequestIsInProgress else {
+                return
+            }
             self.model.loadRequestToken(redirectURI: Constant.redirectURI)
         }) {
             HStack(spacing: 8) {
