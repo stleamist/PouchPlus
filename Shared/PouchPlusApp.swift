@@ -3,7 +3,7 @@ import SwiftUI
 @main
 struct PouchPlusApp: App {
     
-    @StateObject private var model = PocketPlusModel()
+    @StateObject private var model = PouchPlusModel()
     
     var body: some Scene {
         WindowGroup {

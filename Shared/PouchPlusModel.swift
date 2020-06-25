@@ -1,7 +1,7 @@
 import Combine
 import Alamofire
 
-class PocketPlusModel: ObservableObject {
+class PouchPlusModel: ObservableObject {
     
     // 에러 핸들링을 위해 String이 아닌 DataResponse를 퍼블리싱한다.
     @Published private(set) var requestTokenResponse: DataResponse<String, AFError>?
@@ -14,7 +14,7 @@ class PocketPlusModel: ObservableObject {
     private var requestTokenRequestCancellable: AnyCancellable?
 }
 
-extension PocketPlusModel {
+extension PouchPlusModel {
     func loadRequestToken(redirectURI: String) {
         
         requestTokenRequestIsInProgress = true

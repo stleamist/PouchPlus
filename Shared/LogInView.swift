@@ -21,7 +21,7 @@ struct LogInView: View {
         case signUp
     }
     
-    @EnvironmentObject private var model: PocketPlusModel
+    @EnvironmentObject private var model: PouchPlusModel
     
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
     
