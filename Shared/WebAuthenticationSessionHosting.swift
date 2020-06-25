@@ -6,9 +6,8 @@ struct WebAuthenticationSession {
     
     let url: URL
     let callbackURLScheme: String?
+    var prefersEphemeralWebBrowserSession: Bool = false
     let completionHandler: ASWebAuthenticationSession.CompletionHandler
-    
-    var prefersEphemeralWebBrowserSession: Bool = true
 }
 
 class WebAuthenticationSessionViewController: UIViewController, ASWebAuthenticationPresentationContextProviding {

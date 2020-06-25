@@ -17,11 +17,15 @@ struct PocketService {
         self.accessToken = accessToken
     }
     
+    // MARK: Session
+    
     private let session: Session = {
         let configuration = URLSessionConfiguration.af.default
         configuration.headers.add(name: "X-Accept", value: "application/json")
         return Session(configuration: configuration)
     }()
+    
+    // MARK: Encoder & Decoder
     
     private let parameterEncoder: JSONParameterEncoder = {
         let encoder = JSONEncoder()
@@ -36,8 +40,19 @@ struct PocketService {
         return decoder
     }()
     
-    func requestTokenPublisher(redirectURI: String) -> AnyPublisher<DataResponse<String, AFError>, Never> {
-        
+    // MARK: Request Token
+    
+    struct RequestTokenQuery: Encodable {
+        let consumerKey: String
+        let redirectUri: String
+    }
+
+    struct RequestTokenResponse: Decodable {
+        let code: String
+        let state: String?
+    }
+    
+    func requestTokenPublisher(redirectURI: String) -> AnyPublisher<Result<String, AFError>, Never> {
         return session.request(
             baseURL.appendingPathComponent("/oauth/request"),
             method: .post,
@@ -48,17 +63,36 @@ struct PocketService {
             encoder: parameterEncoder
         )
         .publishDecodable(type: RequestTokenResponse.self, decoder: decoder)
+        .result()
         .map { $0.map(\.code) }
         .eraseToAnyPublisher()
     }
-}
+    
+    // MARK: Access Token
+    
+    struct AccessTokenQuery: Encodable {
+        let consumerKey: String
+        let code: String
+    }
 
-struct RequestTokenQuery: Encodable {
-    let consumerKey: String
-    let redirectUri: String
-}
-
-struct RequestTokenResponse: Decodable {
-    let code: String
-    let state: String?
+    struct AccessTokenResponse: Decodable {
+        let accessToken: String
+        let username: String
+    }
+    
+    func accessTokenPublisher(requestToken: String) -> AnyPublisher<Result<String, AFError>, Never> {
+        return session.request(
+            baseURL.appendingPathComponent("/oauth/authorize"),
+            method: .post,
+            parameters: AccessTokenQuery(
+                consumerKey: consumerKey,
+                code: requestToken
+            ),
+            encoder: parameterEncoder
+        )
+        .publishDecodable(type: AccessTokenResponse.self, decoder: decoder)
+        .result()
+        .map { $0.map(\.accessToken) }
+        .eraseToAnyPublisher()
+    }
 }

@@ -1,18 +1,19 @@
 import SwiftUI
 import Combine
+import AuthenticationServices
 import Alamofire
 import ExtensionKit
 
 // Identifiable protocol conformances for webAuthenticationSession item binding
+// TODO: 분리된 파일로 옮기기
 
 extension String: Identifiable {
     public var id: String { self }
 }
 
-extension AFError: Identifiable {
-    public var id: UUID { UUID() }
+extension PouchPlusError: Identifiable {
+    var id: UUID { UUID() }
 }
-
 
 struct LogInView: View {
     
@@ -27,26 +28,11 @@ struct LogInView: View {
     
     @State private var mode: Mode?
     
-    private var requestTokenBinding: Binding<String?> {
-        return Binding {
-            return try? model.requestTokenResponse?.result.get()
-        } set: {
-            guard $0 == nil else { return }
-            model.removeRequestTokenResponse()
-        }
-    }
+    @State private var requestToken: String?
     
-    private var errorBinding: Binding<AFError?> {
-        return Binding {
-            guard case .failure(let error) = model.requestTokenResponse?.result else {
-                return nil
-            }
-            return error
-        } set: {
-            guard $0 == nil else { return }
-            model.removeRequestTokenResponse()
-        }
-    }
+    @State private var requestTokenError: PouchPlusError?
+    @State private var authorizationError: PouchPlusError?
+    @State private var accessTokenError: PouchPlusError?
     
     var body: some View {
         VStack {
@@ -72,20 +58,53 @@ struct LogInView: View {
             }
         }
         .padding(16)
-        .webAuthenticationSession(item: requestTokenBinding) { requestToken in
+        .onReceive(model.$requestTokenResult) { result in
+            switch result {
+            case .success(let requestToken):
+                self.requestToken = requestToken
+            case .failure(let error):
+                self.requestTokenError = error
+            case .none: ()
+                self.requestToken = nil
+                self.requestTokenError = nil
+            }
+        }
+        .webAuthenticationSession(item: $requestToken) { requestToken in
             let url = URL(string: "https://getpocket.com/auth/authorize")!
                 .withQueryStrings([
                     "request_token": requestToken,
                     "redirect_uri": Constant.redirectURI,
                     "force": mode?.rawValue.lowercased()
                 ])
-            return WebAuthenticationSession(url: url, callbackURLScheme: Constant.urlScheme) { callbackURL, error in
-                print(callbackURL, error)
+            let prefersEphemeralWebBrowserSession = (mode == .signUp)
+            return WebAuthenticationSession(url: url, callbackURLScheme: Constant.urlScheme, prefersEphemeralWebBrowserSession: prefersEphemeralWebBrowserSession) { callbackURL, error in
+                if let error = error, (error as? ASWebAuthenticationSessionError)?.code != .canceledLogin {
+                    self.authorizationError = .commonError(.webAuthenticationSessionError(error))
+                    return
+                }
+                guard callbackURL?.absoluteString == Constant.redirectURI else {
+                    return
+                }
+                model.loadAccessToken()
             }
         }
-        .alert(item: errorBinding) { error in
-            Alert(title: Text(error.localizedDescription))
+        .onReceive(model.$accessTokenResult) { result in
+            if case .failure(let error) = result {
+                self.accessTokenError = error
+            }
         }
+        .background(Group {
+            // SwiftUI에서는 하나의 뷰의 여러 알림을 붙이면 충돌이 발생한다.
+            // 이를 해결하기 위해, 세 개의 투명 뷰를 만들어 각자의 알림을 붙인다.
+            // (EmptyView에서는 똑같이 충돌이 발생하기에 Color 뷰를 사용했다.)
+            // 참고: https://www.hackingwithswift.com/quick-start/swiftui/how-to-show-multiple-alerts-in-a-single-view
+            Color.clear
+                .alert(error: $requestTokenError)
+            Color.clear
+                .alert(error: $authorizationError)
+            Color.clear
+                .alert(error: $accessTokenError)
+        })
     }
     
     private func actionButton<Label: View>(for mode: Mode, colorLevel: FilledButtonStyle.Level, @ViewBuilder label: () -> Label) -> some View {

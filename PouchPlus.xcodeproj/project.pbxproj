@@ -32,6 +32,10 @@
 		C74E626224A35F9D00C060A1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E626024A35F9D00C060A1 /* Constant.swift */; };
 		C74E626A24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E626424A3945600C060A1 /* WebAuthenticationSessionHosting.swift */; };
 		C74E626B24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E626424A3945600C060A1 /* WebAuthenticationSessionHosting.swift */; };
+		C74E629024A42E1D00C060A1 /* PouchPlusError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E628F24A42E1D00C060A1 /* PouchPlusError.swift */; };
+		C74E629124A42E1D00C060A1 /* PouchPlusError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E628F24A42E1D00C060A1 /* PouchPlusError.swift */; };
+		C74E629324A442F500C060A1 /* View+AlertErrorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E629224A442F500C060A1 /* View+AlertErrorItem.swift */; };
+		C74E629424A442F500C060A1 /* View+AlertErrorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E629224A442F500C060A1 /* View+AlertErrorItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,8 @@
 		C74E625D24A35E8000C060A1 /* Publisher+AssignOptional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+AssignOptional.swift"; sourceTree = "<group>"; };
 		C74E626024A35F9D00C060A1 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C74E626424A3945600C060A1 /* WebAuthenticationSessionHosting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAuthenticationSessionHosting.swift; sourceTree = "<group>"; };
+		C74E628F24A42E1D00C060A1 /* PouchPlusError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchPlusError.swift; sourceTree = "<group>"; };
+		C74E629224A442F500C060A1 /* View+AlertErrorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AlertErrorItem.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,7 @@
 				C74E624524A317EB00C060A1 /* LogInView.swift */,
 				C74E626324A3670400C060A1 /* Styles */,
 				C74E625A24A326A200C060A1 /* PocketService.swift */,
+				C74E628F24A42E1D00C060A1 /* PouchPlusError.swift */,
 				C74E626024A35F9D00C060A1 /* Constant.swift */,
 				C74E626424A3945600C060A1 /* WebAuthenticationSessionHosting.swift */,
 				C74E628E24A3B96000C060A1 /* Extensions */,
@@ -197,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				C74E625D24A35E8000C060A1 /* Publisher+AssignOptional.swift */,
+				C74E629224A442F500C060A1 /* View+AlertErrorItem.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -369,9 +377,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C74E624624A317EB00C060A1 /* LogInView.swift in Sources */,
+				C74E629324A442F500C060A1 /* View+AlertErrorItem.swift in Sources */,
 				C74E623024A3104100C060A1 /* ContentView.swift in Sources */,
 				C74E622E24A3104100C060A1 /* PouchPlusApp.swift in Sources */,
 				C74E625224A3240100C060A1 /* PouchPlusModel.swift in Sources */,
+				C74E629024A42E1D00C060A1 /* PouchPlusError.swift in Sources */,
 				C74E625B24A326A200C060A1 /* PocketService.swift in Sources */,
 				C74E626A24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */,
 				C74E625E24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */,
@@ -385,9 +395,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C74E624724A317EB00C060A1 /* LogInView.swift in Sources */,
+				C74E629424A442F500C060A1 /* View+AlertErrorItem.swift in Sources */,
 				C74E623124A3104100C060A1 /* ContentView.swift in Sources */,
 				C74E622F24A3104100C060A1 /* PouchPlusApp.swift in Sources */,
 				C74E625324A3240100C060A1 /* PouchPlusModel.swift in Sources */,
+				C74E629124A42E1D00C060A1 /* PouchPlusError.swift in Sources */,
 				C74E625C24A326A200C060A1 /* PocketService.swift in Sources */,
 				C74E626B24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */,
 				C74E625F24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */,
