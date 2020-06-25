@@ -8,14 +8,12 @@ struct PocketService {
     let baseURL = URL(string: "https://getpocket.com/v3")!
     
     let consumerKey: String
-    let accessToken: String?
     
-    static let shared = PocketService(consumerKey: Constant.consumerKey)
-    
-    private init(consumerKey: String, accessToken: String? = nil) {
+    private init(consumerKey: String) {
         self.consumerKey = consumerKey
-        self.accessToken = accessToken
     }
+    
+    static let shared = Self.init(consumerKey: Constant.consumerKey)
     
     // MARK: Session
     

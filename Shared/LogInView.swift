@@ -17,14 +17,15 @@ extension PouchPlusError: Identifiable {
 
 struct LogInView: View {
     
+    @EnvironmentObject private var appModel: AppModel
+    @StateObject var authenticationModel: AuthenticationModel
+    
+    @Environment(\.colorScheme) private var colorScheme: ColorScheme
+    
     enum Mode: String {
         case logIn
         case signUp
     }
-    
-    @EnvironmentObject private var authenticationModel: AuthenticationModel
-    
-    @Environment(\.colorScheme) private var colorScheme: ColorScheme
     
     @State private var mode: Mode?
     
@@ -138,6 +139,6 @@ struct LogInView: View {
 
 struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
-        LogInView()
+        LogInView(authenticationModel: AuthenticationModel())
     }
 }
