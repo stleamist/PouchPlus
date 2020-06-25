@@ -37,7 +37,7 @@ extension AuthenticationModel {
     func loadAccessToken(requestToken: String) {
         PocketService.shared
             .accessTokenPublisher(query: .init(requestToken: requestToken))
-            .map { result in result.mapError { afError in .commonError(.networkError(afError)) } }
+            .map { $0.mapError({ .commonError(.networkError($0)) }) }
             .assign(to: \.accessTokenContentResult, on: self)
             .store(in: &cancellables)
     }
