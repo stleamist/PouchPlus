@@ -3,12 +3,12 @@ import SwiftUI
 @main
 struct PouchPlusApp: App {
     
-    @StateObject private var model = PouchPlusModel()
+    @StateObject private var authenticationModel = AuthenticationModel()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(model)
+                .environmentObject(authenticationModel)
         }
     }
 }

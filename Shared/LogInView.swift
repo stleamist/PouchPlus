@@ -22,7 +22,7 @@ struct LogInView: View {
         case signUp
     }
     
-    @EnvironmentObject private var model: PouchPlusModel
+    @EnvironmentObject private var authenticationModel: AuthenticationModel
     
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
     
@@ -58,7 +58,7 @@ struct LogInView: View {
             }
         }
         .padding(16)
-        .onReceive(model.$requestTokenResult) { result in
+        .onReceive(authenticationModel.$requestTokenResult) { result in
             switch result {
             case .success(let requestToken):
                 self.requestToken = requestToken
@@ -85,10 +85,10 @@ struct LogInView: View {
                 guard callbackURL?.absoluteString == Constant.redirectURI else {
                     return
                 }
-                model.loadAccessToken()
+                authenticationModel.loadAccessToken()
             }
         }
-        .onReceive(model.$accessTokenResult) { result in
+        .onReceive(authenticationModel.$accessTokenResult) { result in
             if case .failure(let error) = result {
                 self.accessTokenError = error
             }
@@ -113,15 +113,15 @@ struct LogInView: View {
         return Button(action: {
             self.mode = mode
             // 버튼을 연달아 눌렀을 때 요청을 여러 번 전송하는 것을 막는다.
-            guard !self.model.requestTokenRequestIsInProgress else {
+            guard !self.authenticationModel.requestTokenRequestIsInProgress else {
                 return
             }
-            self.model.loadRequestToken(redirectURI: Constant.redirectURI)
+            self.authenticationModel.loadRequestToken(redirectURI: Constant.redirectURI)
         }) {
             HStack(spacing: 8) {
                 Spacer()
                     .overlay(Group {
-                        if model.requestTokenRequestIsInProgress && self.mode == mode {
+                        if authenticationModel.requestTokenRequestIsInProgress && self.mode == mode {
                             ProgressView()
                                 .progressViewStyle(
                                     CircularProgressViewStyle(tint: progressViewTintColor)

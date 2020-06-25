@@ -1,7 +1,7 @@
 import Combine
 import Alamofire
 
-class PouchPlusModel: ObservableObject {
+class AuthenticationModel: ObservableObject {
     
     // MARK: Request Token
     
@@ -19,7 +19,7 @@ class PouchPlusModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 }
 
-extension PouchPlusModel {
+extension AuthenticationModel {
     
     func loadRequestToken(redirectURI: String) {
         PocketService.shared
