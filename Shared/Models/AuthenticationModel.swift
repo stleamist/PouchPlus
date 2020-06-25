@@ -23,8 +23,8 @@ extension AuthenticationModel {
     
     func loadRequestToken(redirectURI: String) {
         PocketService.shared
-            .requestTokenPublisher(redirectURI: redirectURI)
-            .map { $0.map(\.code) }
+            .requestTokenPublisher(query: .init(redirectUri: redirectURI))
+            .map { $0.map(\.requestToken) }
             .map { $0.mapError({ .commonError(.networkError($0)) }) }
             .handleEvents(
                 receiveCompletion: { _ in self.requestTokenRequestIsInProgress = false },
@@ -41,7 +41,7 @@ extension AuthenticationModel {
             return
         }
         PocketService.shared
-            .accessTokenPublisher(requestToken: requestToken)
+            .accessTokenPublisher(query: .init(requestToken: requestToken))
             .map { result in result.mapError { afError in .commonError(.networkError(afError)) } }
             .assign(to: \.accessTokenContentResult, on: self)
             .store(in: &cancellables)
