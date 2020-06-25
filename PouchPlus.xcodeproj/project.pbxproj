@@ -11,13 +11,13 @@
 		C74E622C24A3104100C060A1 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E622B24A3104100C060A1 /* Tests_macOS.swift */; };
 		C74E622E24A3104100C060A1 /* PouchPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E620524A3103F00C060A1 /* PouchPlusApp.swift */; };
 		C74E622F24A3104100C060A1 /* PouchPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E620524A3103F00C060A1 /* PouchPlusApp.swift */; };
-		C74E623024A3104100C060A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E620624A3103F00C060A1 /* ContentView.swift */; };
-		C74E623124A3104100C060A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E620624A3103F00C060A1 /* ContentView.swift */; };
+		C74E623024A3104100C060A1 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E620624A3103F00C060A1 /* RootView.swift */; };
+		C74E623124A3104100C060A1 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E620624A3103F00C060A1 /* RootView.swift */; };
 		C74E623224A3104100C060A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74E620724A3104000C060A1 /* Assets.xcassets */; };
 		C74E623324A3104100C060A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74E620724A3104000C060A1 /* Assets.xcassets */; };
 		C74E624424A317D700C060A1 /* FullScreenSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = C74E624324A317D700C060A1 /* FullScreenSafariView */; };
-		C74E624624A317EB00C060A1 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E624524A317EB00C060A1 /* LogInView.swift */; };
-		C74E624724A317EB00C060A1 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E624524A317EB00C060A1 /* LogInView.swift */; };
+		C74E624624A317EB00C060A1 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E624524A317EB00C060A1 /* AuthenticationView.swift */; };
+		C74E624724A317EB00C060A1 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E624524A317EB00C060A1 /* AuthenticationView.swift */; };
 		C74E624924A318F400C060A1 /* FilledButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E624824A318F400C060A1 /* FilledButtonStyle.swift */; };
 		C74E624A24A318F400C060A1 /* FilledButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E624824A318F400C060A1 /* FilledButtonStyle.swift */; };
 		C74E625024A3223900C060A1 /* ExtensionKit in Frameworks */ = {isa = PBXBuildFile; productRef = C74E624F24A3223900C060A1 /* ExtensionKit */; };
@@ -36,12 +36,12 @@
 		C74E629124A42E1D00C060A1 /* PouchPlusError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E628F24A42E1D00C060A1 /* PouchPlusError.swift */; };
 		C74E629324A442F500C060A1 /* View+AlertErrorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E629224A442F500C060A1 /* View+AlertErrorItem.swift */; };
 		C74E629424A442F500C060A1 /* View+AlertErrorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E629224A442F500C060A1 /* View+AlertErrorItem.swift */; };
-		C786E57324A4733A00459204 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57224A4733A00459204 /* AppModel.swift */; };
-		C786E57424A4733A00459204 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57224A4733A00459204 /* AppModel.swift */; };
-		C786E57624A4744900459204 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57524A4744900459204 /* MainModel.swift */; };
-		C786E57724A4744900459204 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57524A4744900459204 /* MainModel.swift */; };
-		C786E57924A475E300459204 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57824A475E300459204 /* MainView.swift */; };
-		C786E57A24A475E300459204 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57824A475E300459204 /* MainView.swift */; };
+		C786E57324A4733A00459204 /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57224A4733A00459204 /* RootModel.swift */; };
+		C786E57424A4733A00459204 /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57224A4733A00459204 /* RootModel.swift */; };
+		C786E57624A4744900459204 /* PouchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57524A4744900459204 /* PouchModel.swift */; };
+		C786E57724A4744900459204 /* PouchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57524A4744900459204 /* PouchModel.swift */; };
+		C786E57924A475E300459204 /* PouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57824A475E300459204 /* PouchView.swift */; };
+		C786E57A24A475E300459204 /* PouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57824A475E300459204 /* PouchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +63,7 @@
 
 /* Begin PBXFileReference section */
 		C74E620524A3103F00C060A1 /* PouchPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchPlusApp.swift; sourceTree = "<group>"; };
-		C74E620624A3103F00C060A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C74E620624A3103F00C060A1 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		C74E620724A3104000C060A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C74E620C24A3104000C060A1 /* PouchPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PouchPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74E620F24A3104000C060A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 		C74E622724A3104100C060A1 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74E622B24A3104100C060A1 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		C74E622D24A3104100C060A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C74E624524A317EB00C060A1 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		C74E624524A317EB00C060A1 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		C74E624824A318F400C060A1 /* FilledButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledButtonStyle.swift; sourceTree = "<group>"; };
 		C74E625124A3240100C060A1 /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
 		C74E625A24A326A200C060A1 /* PocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketService.swift; sourceTree = "<group>"; };
@@ -85,9 +85,9 @@
 		C74E626424A3945600C060A1 /* WebAuthenticationSessionHosting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAuthenticationSessionHosting.swift; sourceTree = "<group>"; };
 		C74E628F24A42E1D00C060A1 /* PouchPlusError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchPlusError.swift; sourceTree = "<group>"; };
 		C74E629224A442F500C060A1 /* View+AlertErrorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AlertErrorItem.swift"; sourceTree = "<group>"; };
-		C786E57224A4733A00459204 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
-		C786E57524A4744900459204 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
-		C786E57824A475E300459204 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C786E57224A4733A00459204 /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
+		C786E57524A4744900459204 /* PouchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchModel.swift; sourceTree = "<group>"; };
+		C786E57824A475E300459204 /* PouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,12 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				C74E620524A3103F00C060A1 /* PouchPlusApp.swift */,
-				C786E57224A4733A00459204 /* AppModel.swift */,
-				C74E625124A3240100C060A1 /* AuthenticationModel.swift */,
-				C786E57524A4744900459204 /* MainModel.swift */,
-				C74E620624A3103F00C060A1 /* ContentView.swift */,
-				C74E624524A317EB00C060A1 /* LogInView.swift */,
-				C786E57824A475E300459204 /* MainView.swift */,
+				C786E57B24A47F0A00459204 /* Models */,
+				C786E57C24A47F1800459204 /* Views */,
 				C74E626324A3670400C060A1 /* Styles */,
 				C74E625A24A326A200C060A1 /* PocketService.swift */,
 				C74E628F24A42E1D00C060A1 /* PouchPlusError.swift */,
@@ -219,6 +215,26 @@
 				C74E629224A442F500C060A1 /* View+AlertErrorItem.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C786E57B24A47F0A00459204 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C786E57224A4733A00459204 /* RootModel.swift */,
+				C74E625124A3240100C060A1 /* AuthenticationModel.swift */,
+				C786E57524A4744900459204 /* PouchModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C786E57C24A47F1800459204 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C74E620624A3103F00C060A1 /* RootView.swift */,
+				C74E624524A317EB00C060A1 /* AuthenticationView.swift */,
+				C786E57824A475E300459204 /* PouchView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,16 +404,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C74E624624A317EB00C060A1 /* LogInView.swift in Sources */,
-				C786E57924A475E300459204 /* MainView.swift in Sources */,
-				C786E57624A4744900459204 /* MainModel.swift in Sources */,
+				C74E624624A317EB00C060A1 /* AuthenticationView.swift in Sources */,
+				C786E57924A475E300459204 /* PouchView.swift in Sources */,
+				C786E57624A4744900459204 /* PouchModel.swift in Sources */,
 				C74E629324A442F500C060A1 /* View+AlertErrorItem.swift in Sources */,
-				C74E623024A3104100C060A1 /* ContentView.swift in Sources */,
+				C74E623024A3104100C060A1 /* RootView.swift in Sources */,
 				C74E622E24A3104100C060A1 /* PouchPlusApp.swift in Sources */,
 				C74E625224A3240100C060A1 /* AuthenticationModel.swift in Sources */,
 				C74E629024A42E1D00C060A1 /* PouchPlusError.swift in Sources */,
 				C74E625B24A326A200C060A1 /* PocketService.swift in Sources */,
-				C786E57324A4733A00459204 /* AppModel.swift in Sources */,
+				C786E57324A4733A00459204 /* RootModel.swift in Sources */,
 				C74E626A24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */,
 				C74E625E24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */,
 				C74E624924A318F400C060A1 /* FilledButtonStyle.swift in Sources */,
@@ -409,16 +425,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C74E624724A317EB00C060A1 /* LogInView.swift in Sources */,
-				C786E57A24A475E300459204 /* MainView.swift in Sources */,
-				C786E57724A4744900459204 /* MainModel.swift in Sources */,
+				C74E624724A317EB00C060A1 /* AuthenticationView.swift in Sources */,
+				C786E57A24A475E300459204 /* PouchView.swift in Sources */,
+				C786E57724A4744900459204 /* PouchModel.swift in Sources */,
 				C74E629424A442F500C060A1 /* View+AlertErrorItem.swift in Sources */,
-				C74E623124A3104100C060A1 /* ContentView.swift in Sources */,
+				C74E623124A3104100C060A1 /* RootView.swift in Sources */,
 				C74E622F24A3104100C060A1 /* PouchPlusApp.swift in Sources */,
 				C74E625324A3240100C060A1 /* AuthenticationModel.swift in Sources */,
 				C74E629124A42E1D00C060A1 /* PouchPlusError.swift in Sources */,
 				C74E625C24A326A200C060A1 /* PocketService.swift in Sources */,
-				C786E57424A4733A00459204 /* AppModel.swift in Sources */,
+				C786E57424A4733A00459204 /* RootModel.swift in Sources */,
 				C74E626B24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */,
 				C74E625F24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */,
 				C74E624A24A318F400C060A1 /* FilledButtonStyle.swift in Sources */,

@@ -1,7 +1,7 @@
 import Combine
 import Alamofire
 
-class MainModel: ObservableObject {
+class PouchModel: ObservableObject {
     
     private let accessTokenResponse: PocketService.AccessTokenResponse
     

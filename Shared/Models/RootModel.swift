@@ -1,10 +1,10 @@
 import Foundation
 
-class AppModel: ObservableObject {
+class RootModel: ObservableObject {
     @Published private(set) var accessTokenResponse: PocketService.AccessTokenResponse?
 }
 
-extension AppModel {
+extension RootModel {
     func setAccessTokenResponse(_ accessTokenResponse: PocketService.AccessTokenResponse) {
         self.accessTokenResponse = accessTokenResponse
     }

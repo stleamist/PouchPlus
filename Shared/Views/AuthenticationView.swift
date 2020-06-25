@@ -15,9 +15,9 @@ extension PouchPlusError: Identifiable {
     var id: UUID { UUID() }
 }
 
-struct LogInView: View {
+struct AuthenticationView: View {
     
-    @EnvironmentObject private var appModel: AppModel
+    @EnvironmentObject private var rootModel: RootModel
     @StateObject var authenticationModel: AuthenticationModel
     
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
@@ -137,8 +137,8 @@ struct LogInView: View {
     }
 }
 
-struct LogInView_Previews: PreviewProvider {
+struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
-        LogInView(authenticationModel: AuthenticationModel())
+        AuthenticationView(authenticationModel: AuthenticationModel())
     }
 }
