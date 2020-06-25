@@ -72,6 +72,19 @@ extension PocketService {
 
 extension PocketService {
     
+    func requestTokenPublisher(query: RequestTokenQuery) -> AnyPublisher<Result<RequestTokenContent, AFError>, Never> {
+        return session.request(
+            baseURL.appendingPathComponent("/oauth/request"),
+            method: .post,
+            parameters: query,
+            encoder: parameterEncoder,
+            interceptor: AuthenticationInterceptor(consumerKey: consumerKey)
+        )
+        .publishDecodable(type: RequestTokenContent.self, decoder: decoder)
+        .result()
+        .eraseToAnyPublisher()
+    }
+    
     struct RequestTokenQuery: Encodable {
         let redirectUri: String
     }
@@ -86,24 +99,24 @@ extension PocketService {
             case state
         }
     }
-    
-    func requestTokenPublisher(query: RequestTokenQuery) -> AnyPublisher<Result<RequestTokenContent, AFError>, Never> {
-        return session.request(
-            baseURL.appendingPathComponent("/oauth/request"),
-            method: .post,
-            parameters: query,
-            encoder: parameterEncoder,
-            interceptor: AuthenticationInterceptor(consumerKey: consumerKey)
-        )
-        .publishDecodable(type: RequestTokenContent.self, decoder: decoder)
-        .result()
-        .eraseToAnyPublisher()
-    }
 }
     
 // MARK: Access Token
 
 extension PocketService {
+    
+    func accessTokenPublisher(query: AccessTokenQuery) -> AnyPublisher<Result<AccessTokenContent, AFError>, Never> {
+        return session.request(
+            baseURL.appendingPathComponent("/oauth/authorize"),
+            method: .post,
+            parameters: query,
+            encoder: parameterEncoder,
+            interceptor: AuthenticationInterceptor(consumerKey: consumerKey)
+        )
+        .publishDecodable(type: AccessTokenContent.self, decoder: decoder)
+        .result()
+        .eraseToAnyPublisher()
+    }
     
     struct AccessTokenQuery: Encodable {
         
@@ -117,18 +130,5 @@ extension PocketService {
     struct AccessTokenContent: Decodable {
         let accessToken: String
         let username: String
-    }
-    
-    func accessTokenPublisher(query: AccessTokenQuery) -> AnyPublisher<Result<AccessTokenContent, AFError>, Never> {
-        return session.request(
-            baseURL.appendingPathComponent("/oauth/authorize"),
-            method: .post,
-            parameters: query,
-            encoder: parameterEncoder,
-            interceptor: AuthenticationInterceptor(consumerKey: consumerKey)
-        )
-        .publishDecodable(type: AccessTokenContent.self, decoder: decoder)
-        .result()
-        .eraseToAnyPublisher()
     }
 }
