@@ -6,17 +6,20 @@ class PouchModel: ObservableObject {
     @Published var latestRetrievalResult: Result<PocketService.RetrievalContent, PouchPlusError>?
     @Published var items: [PocketService.Item] = []
     
+    // MARK: AccessToken
     private let accessTokenContent: PocketService.AccessTokenContent
-    
-    private var accessToken: String {
-        return accessTokenContent.accessToken
-    }
+    private var accessToken: String { accessTokenContent.accessToken }
     
     // MARK: Cancellables
     private var cancellables = Set<AnyCancellable>()
     
     init(accessTokenContent: PocketService.AccessTokenContent) {
         self.accessTokenContent = accessTokenContent
+    }
+    
+    private func appendItems(list: [String: PocketService.Item]) {
+        let items = list.values.map({ $0 }).sorted(by: { $0.sortId < $1.sortId })
+        self.items.append(contentsOf: items)
     }
 }
 
@@ -31,8 +34,7 @@ extension PouchModel {
                 guard let list = try? result.get().list else {
                     return
                 }
-                let items = list.values.map({ $0 }).sorted(by: { $0.sortId < $1.sortId })
-                self.items.append(contentsOf: items)
+                self.appendItems(list: list)
             }
             .store(in: &cancellables)
     }
