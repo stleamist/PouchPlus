@@ -86,7 +86,7 @@ struct AuthenticationView: View {
                 guard callbackURL?.absoluteString == Constant.redirectURI else {
                     return
                 }
-                authenticationModel.loadAccessToken()
+                authenticationModel.loadAccessToken(requestToken: requestToken)
             }
         }
         .onReceive(authenticationModel.$accessTokenContentResult) { result in

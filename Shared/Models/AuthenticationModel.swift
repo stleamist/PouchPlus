@@ -34,12 +34,7 @@ extension AuthenticationModel {
             .store(in: &cancellables)
     }
     
-    func loadAccessToken() {
-        guard let requestToken = try? requestTokenResult?.get() else {
-            assertionFailure("The app attempted to load an access token before a request token is set. That's illegal.")
-            accessTokenContentResult = .failure(.developerError(.requestTokenNotSet))
-            return
-        }
+    func loadAccessToken(requestToken: String) {
         PocketService.shared
             .accessTokenPublisher(query: .init(requestToken: requestToken))
             .map { result in result.mapError { afError in .commonError(.networkError(afError)) } }
