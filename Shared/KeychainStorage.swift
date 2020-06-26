@@ -6,28 +6,24 @@ struct KeychainStorage<Value: Codable> {
     
     let key: String
     let service: String
-    let defaultValue: Value
+    let initialValue: Value
     
     private let keychain: KeychainAccess.Keychain
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
 
-    init(
-        _ key: String,
-        service: String = (Bundle.main.bundleIdentifier ?? "KeychainAccess"),
-        defaultValue: Value
-    ) {
+    init(wrappedValue initialValue: Value, _ key: String, service: String? = nil) {
+        self.initialValue = initialValue
         self.key = key
-        self.service = service
-        self.defaultValue = defaultValue
-        self.keychain = KeychainAccess.Keychain(service: service)
+        self.service = service ?? Bundle.main.bundleIdentifier ?? "com.kishikawakatsumi.KeychainAccess"
+        self.keychain = KeychainAccess.Keychain(service: self.service)
     }
 
     var wrappedValue: Value {
         get {
             guard let data = try? keychain.getData(key),
                 let value = try? decoder.decode(Value.self, from: data) else {
-                return defaultValue
+                return initialValue
             }
             return value
         }

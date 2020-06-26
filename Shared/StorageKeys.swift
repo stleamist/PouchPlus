@@ -13,13 +13,7 @@ enum KeychainStorageKey: String {
 // 현재는 extension에서 시스템 이니셜라이저를 사용할 수 없는 문제가 있음.
 
 extension KeychainStorage {
-    init(
-        _ key: KeychainStorageKey,
-        defaultValue: Value
-    ) {
-        self.init(
-            key.rawValue,
-            defaultValue: defaultValue
-        )
+    init(wrappedValue: Value, _ key: KeychainStorageKey, service: String? = nil) {
+        self.init(wrappedValue: wrappedValue, key.rawValue, service: service)
     }
 }
