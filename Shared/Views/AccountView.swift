@@ -13,9 +13,6 @@ struct AccountView: View {
                 Section {
                     ValueLabel(title: "Username", value: rootModel.accessTokenResponse?.username ?? "")
                 }
-                Section {
-                    Toggle("Enters Reader If Available", isOn: $entersReaderIfAvailable)
-                }
                 Section(header: Text("Viewing")) {
                     Picker(selection: $itemsGroupingKey, label: Text("Sort Items By")) {
                         ForEach(DatedItemGroup.GroupingKey.allCases, id: \.self) {
@@ -24,6 +21,7 @@ struct AccountView: View {
                         // TODO: Picker 내부도 InsetGroupedListStyle()로 바꾸기
                         // 현재 iOS 14 베타에서는 작동하지 않는다.
                     }
+                    Toggle("Enters Reader If Available", isOn: $entersReaderIfAvailable)
                 }
                 Section {
                     Button(action: rootModel.removeAccessTokenResponse) {
