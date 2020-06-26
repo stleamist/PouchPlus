@@ -16,20 +16,31 @@ struct ItemList: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(datedItemGroups) { group in
-                    Section(header: Text(Utility.dateString(from: group.date))) {
-                        ForEach(group.items) { item in
-                            Button(action: {
-                                self.selectedURL = item.resolvedUrl.toURL() ?? item.givenUrl.toURL()
-                            }) {
-                                ItemRow(item: item)
+            Group {
+                // TODO: 궁극적으로 UIRefreshControl 사용하기
+                if datedItemGroups.isEmpty {
+                    HStack(spacing: 8) {
+                        ProgressView()
+                        Text("Loading...")
+                            .foregroundColor(.secondary)
+                    }
+                } else {
+                    List {
+                        ForEach(datedItemGroups) { group in
+                            Section(header: Text(Utility.dateString(from: group.date))) {
+                                ForEach(group.items) { item in
+                                    Button(action: {
+                                        self.selectedURL = item.resolvedUrl.toURL() ?? item.givenUrl.toURL()
+                                    }) {
+                                        ItemRow(item: item)
+                                    }
+                                }
                             }
                         }
                     }
+                    .listStyle(PlainListStyle())
                 }
             }
-            .listStyle(PlainListStyle())
             .navigationTitle("Items")
             .onAppear {
                 pouchModel.loadItems(query: .init())
