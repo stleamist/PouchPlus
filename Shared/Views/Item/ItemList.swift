@@ -11,7 +11,7 @@ struct ItemList: View {
     @State private var selectedURL: URL?
     
     var datedItemGroups: [DatedItemGroup] {
-        DatedItemGroup.groupItems(items: pouchModel.items, by: itemsGroupingKey, sorting: .descending)
+        DatedItemGroup.groupItems(items: pouchModel.items, by: itemsGroupingKey)
     }
     
     var body: some View {
