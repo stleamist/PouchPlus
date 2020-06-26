@@ -1,6 +1,10 @@
 import Foundation
 import KeychainAccess
 
+// Value가 Optional이고 initialValue가 Non-optional 값일 때
+// 런타임 도중 nil 값을 할당하면 다음 실행에서 키체인이 데이터가 없다고 판단, initialValue를 할당할 것이라는 오작동을 예상했으나
+// 확인해본 결과 그렇지 않고 정상적으로 작동한다.
+
 @propertyWrapper
 struct KeychainStorage<Value: Codable> {
     
