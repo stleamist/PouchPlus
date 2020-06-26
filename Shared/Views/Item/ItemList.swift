@@ -5,6 +5,8 @@ struct ItemList: View {
     
     @EnvironmentObject var pouchModel: PouchModel
     
+    @AppStorage(AppStorageKey.entersReaderIfAvailable.rawValue) var entersReaderIfAvailable: Bool = false
+    
     @State private var selectedURL: URL?
     
     var datedItemGroups: [DatedItemGroup] {
@@ -32,7 +34,12 @@ struct ItemList: View {
                 pouchModel.loadItems(query: .init())
             }
             .safariView(item: $selectedURL) { selectedURL in
-                SafariView(url: selectedURL)
+                SafariView(
+                    url: selectedURL,
+                    configuration: .init(
+                        entersReaderIfAvailable: entersReaderIfAvailable
+                    )
+                )
             }
         }
     }

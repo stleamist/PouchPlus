@@ -3,7 +3,7 @@ import SwiftUI
 @main
 struct PouchPlusApp: App {
     
-    @StateObject private var rootModel = RootModel()
+    @StateObject var rootModel = RootModel()
     
     var body: some Scene {
         WindowGroup {

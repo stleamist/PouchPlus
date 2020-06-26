@@ -4,11 +4,16 @@ struct AccountView: View {
     
     @EnvironmentObject var rootModel: RootModel
     
+    @AppStorage(AppStorageKey.entersReaderIfAvailable.rawValue) var entersReaderIfAvailable: Bool = false
+    
     var body: some View {
         NavigationView {
             List {
                 Section {
                     ValueLabel(title: "Username", value: rootModel.accessTokenResponse?.username ?? "")
+                }
+                Section {
+                    Toggle("Enters Reader If Available", isOn: $entersReaderIfAvailable)
                 }
                 Section {
                     Button(action: rootModel.removeAccessTokenResponse) {

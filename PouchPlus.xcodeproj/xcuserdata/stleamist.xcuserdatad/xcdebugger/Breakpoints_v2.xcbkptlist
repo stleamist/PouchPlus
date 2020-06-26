@@ -14,8 +14,8 @@
             filePath = "../../../../Library/Developer/Xcode/DerivedData/PouchPlus-erzckdwubzkaumepqtdjbjwjhdnr/SourcePackages/checkouts/FullScreenSafariView/Sources/FullScreenSafariView/SafariView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "updateUIViewController(_:context:)"
             landmarkType = "7">
             <Actions>
