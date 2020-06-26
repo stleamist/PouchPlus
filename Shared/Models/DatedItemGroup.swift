@@ -24,7 +24,18 @@ struct DatedItemGroup {
             let date = Date(timeIntervalSince1970: timeInterval).timeComponentsRemoved
             return date
         }
-        let groups = groupedDictionary.map { Self(date: $0, items: $1) }
+        let groups = groupedDictionary
+            .map { date, items in
+                // FIXME: Item 응답 디코딩 시 미리 시간 값을 Date로 변환하여 보일러플레이트 코드 줄이기
+                Self(
+                    date: date,
+                    items: items.sorted { lhs, rhs in
+                        let lhsTimeInterval = Double(lhs[keyPath: key.keyPathForItem]) ?? -.infinity
+                        let rhsTimeInterval = Double(rhs[keyPath: key.keyPathForItem]) ?? -.infinity
+                        return Date(timeIntervalSince1970: lhsTimeInterval) > Date(timeIntervalSince1970: rhsTimeInterval)
+                    }
+                )
+            }
             .sorted { lhs, rhs in
                 let defaultValue = Date(timeIntervalSince1970: -.infinity)
                 return lhs.date ?? defaultValue > rhs.date ?? defaultValue
