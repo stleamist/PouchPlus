@@ -11,14 +11,33 @@ extension Date {
     }
 }
 
+enum Order: Int {
+    case ascending
+    case descending
+    
+    func areInIncreasingOrder<T: Comparable>(lhs: T, rhs: T) -> Bool {
+        switch self {
+        case .ascending: return lhs <= rhs
+        case .descending: return lhs >= rhs
+        }
+    }
+    
+    func areInIncreasingOrder<T: Comparable>(lhs: T?, rhs: T?, defaultValue: T) -> Bool {
+        switch self {
+        case .ascending: return lhs ?? defaultValue <= rhs ?? defaultValue
+        case .descending: return lhs ?? defaultValue >= rhs ?? defaultValue
+        }
+    }
+}
+
 struct DatedItemGroup {
     let date: Date?
     let items: [PocketService.Item]
     
-    static func groups(from items: [String: PocketService.Item]) -> [Self] {
+    static func groupItems(items: [String: PocketService.Item], by key: GroupingKey, sorting order: Order) -> [Self] {
         let groupedDictionary = Dictionary(grouping: items.values) { item -> Date? in
-            // TODO: timeAdded, timeUpdated 중 선택할 수 있도록 하기
-            guard let timeInterval = Double(item.timeAdded) else {
+            let timeString = item[keyPath: key.keyPathForItem]
+            guard let timeInterval = Double(timeString) else {
                 return nil
             }
             let date = Date(timeIntervalSince1970: timeInterval).timeComponentsRemoved
@@ -26,10 +45,24 @@ struct DatedItemGroup {
         }
         let groups = groupedDictionary.map { Self(date: $0, items: $1) }
             .sorted { lhs, rhs in
-                // TODO: 오름차순, 내림차순 중 선택할 수 있도록 하기
-                lhs.date?.timeIntervalSince1970 ?? -.infinity > rhs.date?.timeIntervalSince1970 ?? -.infinity
+                order.areInIncreasingOrder(lhs: lhs.date, rhs: rhs.date, defaultValue: Date(timeIntervalSince1970: -.infinity)
+                )
             }
         return groups
+    }
+}
+
+extension DatedItemGroup {
+    enum GroupingKey: String, CaseIterable {
+        case timeAdded
+        case timeUpdated
+        
+        var keyPathForItem: KeyPath<PocketService.Item, String> {
+            switch self {
+            case .timeAdded: return \.timeAdded
+            case .timeUpdated: return \.timeUpdated
+            }
+        }
     }
 }
 

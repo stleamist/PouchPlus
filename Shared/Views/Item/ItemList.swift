@@ -6,11 +6,12 @@ struct ItemList: View {
     @EnvironmentObject var pouchModel: PouchModel
     
     @AppStorage(AppStorageKey.entersReaderIfAvailable.rawValue) var entersReaderIfAvailable: Bool = false
+    @AppStorage(AppStorageKey.itemsGroupingKey.rawValue) var itemsGroupingKey: DatedItemGroup.GroupingKey = .timeAdded
     
     @State private var selectedURL: URL?
     
     var datedItemGroups: [DatedItemGroup] {
-        DatedItemGroup.groups(from: pouchModel.items)
+        DatedItemGroup.groupItems(items: pouchModel.items, by: itemsGroupingKey, sorting: .descending)
     }
     
     var body: some View {
