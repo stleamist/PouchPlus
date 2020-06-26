@@ -4,7 +4,7 @@ struct AccountView: View {
     
     @EnvironmentObject var rootModel: RootModel
     
-    @AppStorage(AppStorageKey.entersReaderIfAvailable.rawValue) var entersReaderIfAvailable: Bool = false
+    @AppStorage(AppStorageKey.useReaderWhenAvailable.rawValue) var useReaderWhenAvailable: Bool = false
     @AppStorage(AppStorageKey.itemsGroupingKey.rawValue) var itemsGroupingKey: DatedItemGroup.GroupingKey = .timeAdded
     
     var body: some View {
@@ -21,7 +21,7 @@ struct AccountView: View {
                         // TODO: Picker 내부도 InsetGroupedListStyle()로 바꾸기
                         // 현재 iOS 14 베타에서는 작동하지 않는다.
                     }
-                    Toggle("Enters Reader If Available", isOn: $entersReaderIfAvailable)
+                    Toggle("Use Reader When Available", isOn: $useReaderWhenAvailable)
                 }
                 Section {
                     Button(action: rootModel.removeAccessTokenContent) {

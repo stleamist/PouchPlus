@@ -5,7 +5,7 @@ struct ItemList: View {
     
     @EnvironmentObject var pouchModel: PouchModel
     
-    @AppStorage(AppStorageKey.entersReaderIfAvailable.rawValue) var entersReaderIfAvailable: Bool = false
+    @AppStorage(AppStorageKey.useReaderWhenAvailable.rawValue) var useReaderWhenAvailable: Bool = false
     @AppStorage(AppStorageKey.itemsGroupingKey.rawValue) var itemsGroupingKey: DatedItemGroup.GroupingKey = .timeAdded
     
     @State private var selectedURL: URL?
@@ -49,7 +49,7 @@ struct ItemList: View {
                 SafariView(
                     url: selectedURL,
                     configuration: .init(
-                        entersReaderIfAvailable: entersReaderIfAvailable
+                        entersReaderIfAvailable: useReaderWhenAvailable
                     )
                 )
                 .preferredControlTintColor(Asset.accentColor)
