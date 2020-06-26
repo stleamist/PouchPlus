@@ -17,15 +17,15 @@ enum Order: Int {
     
     func areInIncreasingOrder<T: Comparable>(lhs: T, rhs: T) -> Bool {
         switch self {
-        case .ascending: return lhs <= rhs
-        case .descending: return lhs >= rhs
+        case .ascending: return lhs < rhs
+        case .descending: return lhs > rhs
         }
     }
     
     func areInIncreasingOrder<T: Comparable>(lhs: T?, rhs: T?, defaultValue: T) -> Bool {
         switch self {
-        case .ascending: return lhs ?? defaultValue <= rhs ?? defaultValue
-        case .descending: return lhs ?? defaultValue >= rhs ?? defaultValue
+        case .ascending: return lhs ?? defaultValue < rhs ?? defaultValue
+        case .descending: return lhs ?? defaultValue > rhs ?? defaultValue
         }
     }
 }
