@@ -57,6 +57,10 @@
 		C753297324A4D74B006C1C08 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C753297224A4D74B006C1C08 /* SwiftyJSON */; };
 		C753297624A4D77A006C1C08 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C753297524A4D77A006C1C08 /* KingfisherSwiftUI */; };
 		C753297924A4D7A8006C1C08 /* FavIcon in Frameworks */ = {isa = PBXBuildFile; productRef = C753297824A4D7A8006C1C08 /* FavIcon */; };
+		C75329B824A583A7006C1C08 /* DatedItemGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75329B724A583A7006C1C08 /* DatedItemGroup.swift */; };
+		C75329B924A583A7006C1C08 /* DatedItemGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75329B724A583A7006C1C08 /* DatedItemGroup.swift */; };
+		C75329BB24A58527006C1C08 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75329BA24A58527006C1C08 /* Utility.swift */; };
+		C75329BC24A58527006C1C08 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75329BA24A58527006C1C08 /* Utility.swift */; };
 		C780C69824A492780022BC5A /* ValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780C69724A492780022BC5A /* ValueLabel.swift */; };
 		C780C69924A492780022BC5A /* ValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780C69724A492780022BC5A /* ValueLabel.swift */; };
 		C786E57324A4733A00459204 /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57224A4733A00459204 /* RootModel.swift */; };
@@ -119,6 +123,8 @@
 		C753296524A4D614006C1C08 /* ItemRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		C753296624A4D614006C1C08 /* ItemThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemThumbnail.swift; sourceTree = "<group>"; };
 		C753296724A4D614006C1C08 /* ItemList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
+		C75329B724A583A7006C1C08 /* DatedItemGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatedItemGroup.swift; sourceTree = "<group>"; };
+		C75329BA24A58527006C1C08 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		C780C69724A492780022BC5A /* ValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueLabel.swift; sourceTree = "<group>"; };
 		C786E57224A4733A00459204 /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
 		C786E57524A4744900459204 /* PouchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchModel.swift; sourceTree = "<group>"; };
@@ -186,6 +192,7 @@
 				C753295424A4D5FF006C1C08 /* Service */,
 				C74E628F24A42E1D00C060A1 /* PouchPlusError.swift */,
 				C74E626024A35F9D00C060A1 /* Constant.swift */,
+				C75329BA24A58527006C1C08 /* Utility.swift */,
 				C74E626424A3945600C060A1 /* WebAuthenticationSessionHosting.swift */,
 				C780C69A24A492930022BC5A /* Components */,
 				C74E628E24A3B96000C060A1 /* Extensions */,
@@ -295,6 +302,7 @@
 				C786E57224A4733A00459204 /* RootModel.swift */,
 				C74E625124A3240100C060A1 /* AuthenticationModel.swift */,
 				C786E57524A4744900459204 /* PouchModel.swift */,
+				C75329B724A583A7006C1C08 /* DatedItemGroup.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -503,6 +511,8 @@
 				C753296C24A4D614006C1C08 /* ItemList.swift in Sources */,
 				C74E626A24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */,
 				C753296A24A4D614006C1C08 /* ItemThumbnail.swift in Sources */,
+				C75329B824A583A7006C1C08 /* DatedItemGroup.swift in Sources */,
+				C75329BB24A58527006C1C08 /* Utility.swift in Sources */,
 				C74E625E24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */,
 				C753296224A4D5FF006C1C08 /* PocketService.swift in Sources */,
 				C753296024A4D5FF006C1C08 /* PocketService+Retrieval.swift in Sources */,
@@ -535,6 +545,8 @@
 				C753296D24A4D614006C1C08 /* ItemList.swift in Sources */,
 				C74E626B24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */,
 				C753296B24A4D614006C1C08 /* ItemThumbnail.swift in Sources */,
+				C75329B924A583A7006C1C08 /* DatedItemGroup.swift in Sources */,
+				C75329BC24A58527006C1C08 /* Utility.swift in Sources */,
 				C74E625F24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */,
 				C753296324A4D5FF006C1C08 /* PocketService.swift in Sources */,
 				C753296124A4D5FF006C1C08 /* PocketService+Retrieval.swift in Sources */,

@@ -7,14 +7,22 @@ struct ItemList: View {
     
     @State private var selectedURL: URL?
     
+    var datedItemGroups: [DatedItemGroup] {
+        DatedItemGroup.groups(from: pouchModel.items)
+    }
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach(pouchModel.items) { item in
-                    Button(action: {
-                        self.selectedURL = item.resolvedUrl.toURL() ?? item.givenUrl.toURL()
-                    }) {
-                        ItemRow(item: item)
+                ForEach(datedItemGroups) { group in
+                    Section(header: Text(Utility.dateString(from: group.date))) {
+                        ForEach(group.items) { item in
+                            Button(action: {
+                                self.selectedURL = item.resolvedUrl.toURL() ?? item.givenUrl.toURL()
+                            }) {
+                                ItemRow(item: item)
+                            }
+                        }
                     }
                 }
             }
