@@ -21,6 +21,8 @@ struct AccountView: View {
                         ForEach(DatedItemGroup.GroupingKey.allCases, id: \.self) {
                             Text($0.rawValue)
                         }
+                        // TODO: Picker 내부도 InsetGroupedListStyle()로 바꾸기
+                        // 현재 iOS 14 베타에서는 작동하지 않는다.
                     }
                 }
                 Section {
