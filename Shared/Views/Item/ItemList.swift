@@ -27,7 +27,7 @@ struct ItemList: View {
                 } else {
                     List {
                         ForEach(datedItemGroups) { group in
-                            Section(header: Text(Utility.dateString(from: group.date))) {
+                            Section(header: Text(group.date, style: .date)) {
                                 ForEach(group.items) { item in
                                     Button(action: {
                                         self.selectedURL = item.resolvedUrl.toURL() ?? item.givenUrl.toURL()
