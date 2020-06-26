@@ -52,6 +52,7 @@ struct ItemList: View {
                         entersReaderIfAvailable: entersReaderIfAvailable
                     )
                 )
+                .preferredControlTintColor(Asset.accentColor)
             }
         }
     }

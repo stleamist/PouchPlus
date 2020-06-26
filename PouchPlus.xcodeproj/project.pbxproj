@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C71BE24224A5D77800C6E3F2 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71BE24124A5D77800C6E3F2 /* Asset.swift */; };
+		C71BE24324A5D77800C6E3F2 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71BE24124A5D77800C6E3F2 /* Asset.swift */; };
 		C74E622124A3104100C060A1 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E622024A3104100C060A1 /* Tests_iOS.swift */; };
 		C74E622C24A3104100C060A1 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E622B24A3104100C060A1 /* Tests_macOS.swift */; };
 		C74E622E24A3104100C060A1 /* PouchPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E620524A3103F00C060A1 /* PouchPlusApp.swift */; };
@@ -94,6 +96,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C71BE24124A5D77800C6E3F2 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		C74E620524A3103F00C060A1 /* PouchPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchPlusApp.swift; sourceTree = "<group>"; };
 		C74E620624A3103F00C060A1 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		C74E620724A3104000C060A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -197,6 +200,7 @@
 				C753295424A4D5FF006C1C08 /* Service */,
 				C74E628F24A42E1D00C060A1 /* PouchPlusError.swift */,
 				C74E626024A35F9D00C060A1 /* Constant.swift */,
+				C71BE24124A5D77800C6E3F2 /* Asset.swift */,
 				C75329C024A58D1D006C1C08 /* StorageKeys.swift */,
 				C75329C924A5B78E006C1C08 /* KeychainStorage.swift */,
 				C780C69A24A492930022BC5A /* Components */,
@@ -524,6 +528,7 @@
 				C74E625E24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */,
 				C753296224A4D5FF006C1C08 /* PocketService.swift in Sources */,
 				C753296024A4D5FF006C1C08 /* PocketService+Retrieval.swift in Sources */,
+				C71BE24224A5D77800C6E3F2 /* Asset.swift in Sources */,
 				C75329C124A58D1D006C1C08 /* StorageKeys.swift in Sources */,
 				C74E624924A318F400C060A1 /* FilledButtonStyle.swift in Sources */,
 				C753294F24A4D5CD006C1C08 /* Kingfisher+FaviconProvider.swift in Sources */,
@@ -559,6 +564,7 @@
 				C74E625F24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */,
 				C753296324A4D5FF006C1C08 /* PocketService.swift in Sources */,
 				C753296124A4D5FF006C1C08 /* PocketService+Retrieval.swift in Sources */,
+				C71BE24324A5D77800C6E3F2 /* Asset.swift in Sources */,
 				C75329C224A58D1D006C1C08 /* StorageKeys.swift in Sources */,
 				C74E624A24A318F400C060A1 /* FilledButtonStyle.swift in Sources */,
 				C753295024A4D5CD006C1C08 /* Kingfisher+FaviconProvider.swift in Sources */,
