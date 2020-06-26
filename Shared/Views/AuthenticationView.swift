@@ -30,6 +30,8 @@ struct AuthenticationView: View {
     
     @State private var mode: Mode?
     
+    // TODO: 모델에서 유래된 @State들을 모델로 옮기기
+    
     @State private var requestToken: String?
     
     @State private var requestTokenError: PouchPlusError?

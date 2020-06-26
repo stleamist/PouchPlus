@@ -10,6 +10,9 @@ struct ItemList: View {
     
     @State private var selectedURL: URL?
     
+    // TODO: 모델에서 유래된 @State들을 모델로 옮기기
+    @State private var loadingError: PouchPlusError?
+    
     var datedItemGroups: [DatedItemGroup] {
         DatedItemGroup.groupItems(items: pouchModel.items, by: itemsGroupingKey)
     }
@@ -45,6 +48,12 @@ struct ItemList: View {
             .onAppear {
                 pouchModel.loadItems(query: .init())
             }
+            .onReceive(pouchModel.$latestRetrievalResult) { result in
+                if case .failure(let error) = result {
+                    self.loadingError = error
+                }
+            }
+            .alert(error: $loadingError)
             .safariView(item: $selectedURL) { selectedURL in
                 SafariView(
                     url: selectedURL,
