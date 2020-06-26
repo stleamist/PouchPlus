@@ -11,7 +11,7 @@ struct AccountView: View {
         NavigationView {
             List {
                 Section {
-                    ValueLabel(title: "Username", value: rootModel.accessTokenResponse?.username ?? "")
+                    ValueLabel(title: "Username", value: rootModel.accessTokenContent?.username ?? "")
                 }
                 Section(header: Text("Viewing")) {
                     Picker(selection: $itemsGroupingKey, label: Text("Sort Items By")) {
@@ -24,7 +24,7 @@ struct AccountView: View {
                     Toggle("Enters Reader If Available", isOn: $entersReaderIfAvailable)
                 }
                 Section {
-                    Button(action: rootModel.removeAccessTokenResponse) {
+                    Button(action: rootModel.removeAccessTokenContent) {
                         Text("Log Out")
                             .foregroundColor(.red)
                             .frame(maxWidth: .infinity, alignment: .center)

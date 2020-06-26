@@ -92,8 +92,8 @@ struct AuthenticationView: View {
         }
         .onReceive(authenticationModel.$accessTokenContentResult) { result in
             switch result {
-            case .success(let accessTokenResponse):
-                self.rootModel.setAccessTokenResponse(accessTokenResponse)
+            case .success(let accessTokenContent):
+                self.rootModel.setAccessTokenContent(accessTokenContent)
             case .failure(let error):
                 self.accessTokenError = error
             case .none:
