@@ -63,6 +63,9 @@
 		C75329C224A58D1D006C1C08 /* AppStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75329C024A58D1D006C1C08 /* AppStorageKey.swift */; };
 		C75329C424A5AE4B006C1C08 /* Text+OptionalDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75329C324A5AE4B006C1C08 /* Text+OptionalDate.swift */; };
 		C75329C524A5AE4B006C1C08 /* Text+OptionalDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75329C324A5AE4B006C1C08 /* Text+OptionalDate.swift */; };
+		C75329C824A5B43D006C1C08 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = C75329C724A5B43D006C1C08 /* KeychainAccess */; };
+		C75329CA24A5B78E006C1C08 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75329C924A5B78E006C1C08 /* KeychainStorage.swift */; };
+		C75329CB24A5B78E006C1C08 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75329C924A5B78E006C1C08 /* KeychainStorage.swift */; };
 		C780C69824A492780022BC5A /* ValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780C69724A492780022BC5A /* ValueLabel.swift */; };
 		C780C69924A492780022BC5A /* ValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780C69724A492780022BC5A /* ValueLabel.swift */; };
 		C786E57324A4733A00459204 /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57224A4733A00459204 /* RootModel.swift */; };
@@ -128,6 +131,7 @@
 		C75329B724A583A7006C1C08 /* DatedItemGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatedItemGroup.swift; sourceTree = "<group>"; };
 		C75329C024A58D1D006C1C08 /* AppStorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageKey.swift; sourceTree = "<group>"; };
 		C75329C324A5AE4B006C1C08 /* Text+OptionalDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+OptionalDate.swift"; sourceTree = "<group>"; };
+		C75329C924A5B78E006C1C08 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		C780C69724A492780022BC5A /* ValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueLabel.swift; sourceTree = "<group>"; };
 		C786E57224A4733A00459204 /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
 		C786E57524A4744900459204 /* PouchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchModel.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 			files = (
 				C74E625924A3256300C060A1 /* Alamofire in Frameworks */,
 				C74E625024A3223900C060A1 /* ExtensionKit in Frameworks */,
+				C75329C824A5B43D006C1C08 /* KeychainAccess in Frameworks */,
 				C753297324A4D74B006C1C08 /* SwiftyJSON in Frameworks */,
 				C753297924A4D7A8006C1C08 /* FavIcon in Frameworks */,
 				C753297024A4D663006C1C08 /* FullScreenSafariView in Frameworks */,
@@ -196,6 +201,7 @@
 				C74E628F24A42E1D00C060A1 /* PouchPlusError.swift */,
 				C74E626024A35F9D00C060A1 /* Constant.swift */,
 				C75329C024A58D1D006C1C08 /* AppStorageKey.swift */,
+				C75329C924A5B78E006C1C08 /* KeychainStorage.swift */,
 				C74E626424A3945600C060A1 /* WebAuthenticationSessionHosting.swift */,
 				C780C69A24A492930022BC5A /* Components */,
 				C74E628E24A3B96000C060A1 /* Extensions */,
@@ -346,6 +352,7 @@
 				C753297224A4D74B006C1C08 /* SwiftyJSON */,
 				C753297524A4D77A006C1C08 /* KingfisherSwiftUI */,
 				C753297824A4D7A8006C1C08 /* FavIcon */,
+				C75329C724A5B43D006C1C08 /* KeychainAccess */,
 			);
 			productName = iOS;
 			productReference = C74E620C24A3104000C060A1 /* PouchPlus.app */;
@@ -445,6 +452,7 @@
 				C753297124A4D74B006C1C08 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				C753297424A4D77A006C1C08 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				C753297724A4D7A8006C1C08 /* XCRemoteSwiftPackageReference "FavIcon" */,
+				C75329C624A5B43D006C1C08 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = C74E620D24A3104000C060A1 /* Products */;
 			projectDirPath = "";
@@ -514,6 +522,7 @@
 				C74E629024A42E1D00C060A1 /* PouchPlusError.swift in Sources */,
 				C786E57324A4733A00459204 /* RootModel.swift in Sources */,
 				C753296C24A4D614006C1C08 /* ItemList.swift in Sources */,
+				C75329CA24A5B78E006C1C08 /* KeychainStorage.swift in Sources */,
 				C74E626A24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */,
 				C753296A24A4D614006C1C08 /* ItemThumbnail.swift in Sources */,
 				C75329B824A583A7006C1C08 /* DatedItemGroup.swift in Sources */,
@@ -549,6 +558,7 @@
 				C74E629124A42E1D00C060A1 /* PouchPlusError.swift in Sources */,
 				C786E57424A4733A00459204 /* RootModel.swift in Sources */,
 				C753296D24A4D614006C1C08 /* ItemList.swift in Sources */,
+				C75329CB24A5B78E006C1C08 /* KeychainStorage.swift in Sources */,
 				C74E626B24A3A07900C060A1 /* WebAuthenticationSessionHosting.swift in Sources */,
 				C753296B24A4D614006C1C08 /* ItemThumbnail.swift in Sources */,
 				C75329B924A583A7006C1C08 /* DatedItemGroup.swift in Sources */,
@@ -986,6 +996,14 @@
 				minimumVersion = 3.1.0;
 			};
 		};
+		C75329C624A5B43D006C1C08 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1018,6 +1036,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C753297724A4D7A8006C1C08 /* XCRemoteSwiftPackageReference "FavIcon" */;
 			productName = FavIcon;
+		};
+		C75329C724A5B43D006C1C08 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C75329C624A5B43D006C1C08 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

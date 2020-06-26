@@ -30,3 +30,7 @@ extension PocketService {
         let username: String
     }
 }
+
+// KeychainStorage 저장을 위한 Encodable 프로토콜 준수
+// 참고: Codable 프로토콜은 선언된 파일 외부에서 준수할 수 없기에 여기에 작성했다.
+extension PocketService.AccessTokenContent: Encodable {}
