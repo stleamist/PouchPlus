@@ -24,7 +24,7 @@ enum PouchPlusError: Error, LocalizedError {
         
         var errorDescription: String? {
             switch self {
-            case .networkError(let error as Error): return error.localizedDescription
+            case .networkError(let error): return (error.underlyingError ?? error).localizedDescription
             case .webAuthenticationSessionError(let error as ASWebAuthenticationSessionError): return error.errorDescription
             case .webAuthenticationSessionError(let error): return error.localizedDescription
             }

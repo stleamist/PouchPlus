@@ -1,0 +1,18 @@
+"Log In" = "로그인";
+"Sign Up" = "등록";
+
+"Items" = "항목";
+"Favorites" = "즐겨찾기";
+"Archive" = "아카이브";
+"Tags" = "태그";
+"Account" = "계정";
+
+"Loading..." = "로드 중...";
+
+"Username" = "사용자 이름";
+"Viewing" = "보기";
+"Sort Items By" = "다음 순서로 항목 정렬";
+"timeAdded" = "추가된 날짜";
+"timeUpdated" = "업데이트된 날짜";
+"Use Reader When Available" = "사용 가능할 때 읽기 도구 사용";
+"Log Out" = "로그아웃";

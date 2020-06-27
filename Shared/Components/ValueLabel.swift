@@ -2,15 +2,15 @@ import SwiftUI
 
 struct ValueLabel: View {
     
-    var title: String
-    var value: String
+    let title: Text
+    let value: Text
     
     var body: some View {
         HStack {
-            Text(title)
+            title
                 .foregroundColor(Color(.label))
             Spacer()
-            Text(value)
+            value
                 .foregroundColor(Color(.secondaryLabel))
         }
     }
