@@ -11,9 +11,9 @@ struct ItemRow: View {
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             ItemThumbnail(
-                imageURL: item.topImageUrl?.toURL(),
-                logoURL: item.domainMetadata?.logo.toURL(),
-                pageURL: item.resolvedUrl.toURL() ?? item.givenUrl.toURL(),
+                imageURL: item.topImageUrl?.toURL(addPercentEncoding: true),
+                logoURL: item.domainMetadata?.logo.toURL(addPercentEncoding: true),
+                pageURL: item.resolvedUrl.toURL(addPercentEncoding: true) ?? item.givenUrl.toURL(addPercentEncoding: true),
                 title: item.resolvedTitle
             )
                 .padding(.top, 3)
@@ -24,7 +24,7 @@ struct ItemRow: View {
                     .fontWeight(.semibold)
                     .foregroundColor(.primary)
                     .lineLimit(2)
-                Text(item.resolvedUrl.toURL()?.host ?? "")
+                Text(item.resolvedUrl.toURL(addPercentEncoding: true)?.host ?? "")
                     .font(.subheadline)
                     .fontWeight(.regular)
                     .foregroundColor(.primary)

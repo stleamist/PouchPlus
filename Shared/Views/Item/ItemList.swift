@@ -33,7 +33,7 @@ struct ItemList: View {
                             Section(header: Text(group.date, style: .date)) {
                                 ForEach(group.items) { item in
                                     Button(action: {
-                                        self.selectedURL = item.resolvedUrl.toURL() ?? item.givenUrl.toURL()
+                                        self.selectedURL = item.resolvedUrl.toURL(addPercentEncoding: true) ?? item.givenUrl.toURL(addPercentEncoding: true)
                                     }) {
                                         ItemRow(item: item)
                                     }

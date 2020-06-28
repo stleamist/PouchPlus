@@ -160,7 +160,7 @@ extension PocketService {
         }
         
         struct DomainMetadata: Codable {
-            let name: String
+            let name: String?
             let logo: String
             let greyscaleLogo: String
         }
