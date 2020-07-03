@@ -82,9 +82,11 @@ struct ItemRow: View {
                     Label("Unfavorite", systemImage: "star.slash")
                 }
             }
+            Divider()
             Button(action: {}) {
                 Label("Edit Tags...", systemImage: "tag")
             }
+            Divider()
             Button(action: deleteItem) {
                 Label("Delete", systemImage: "trash")
             }
