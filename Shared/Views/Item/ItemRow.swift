@@ -5,13 +5,14 @@ struct ItemRow: View {
     // TODO: pouchModel을 로우 안에서도 접근하는 것이 맞나? 아니면 상위 뷰에 위임해야 할까?
     @EnvironmentObject var pouchModel: PouchModel
     
+    @AppStorage(AppStorageKey.archiveItemsOnOpen.rawValue) var archiveItemsOnOpen: Bool = false
+    @ScaledMetric(relativeTo: .subheadline) var spacing: CGFloat = 4
+    
     var item: PocketService.Item
     
     var title: String {
         return (!item.resolvedTitle.isEmpty) ? item.resolvedTitle : item.givenTitle
     }
-    
-    @AppStorage(AppStorageKey.archiveItemsOnOpen.rawValue) var archiveItemsOnOpen: Bool = false
     
     // TODO: 로우 디자인 개선하기
     var body: some View {
@@ -24,7 +25,7 @@ struct ItemRow: View {
             )
                 .padding(.top, 3)
             
-            VStack(alignment: .leading, spacing: UIFontMetrics(forTextStyle: .subheadline).scaledValue(for: 4)) {
+            VStack(alignment: .leading, spacing: spacing) {
                 HStack(alignment: .top) {
                     Text(title)
                         .font(.subheadline)
