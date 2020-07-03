@@ -46,7 +46,7 @@ struct ItemList: View {
             }
             .navigationTitle("Items")
             .onAppear {
-                pouchModel.loadItems(query: .init())
+                pouchModel.retrieveItems(query: .init())
             }
             .onReceive(pouchModel.$latestRetrievalResult) { result in
                 if case .failure(let error) = result {

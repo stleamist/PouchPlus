@@ -4,7 +4,7 @@ import Alamofire
 
 extension PocketService {
     
-    func itemsPublisher(accessToken: String, query: RetrievalQuery) -> AnyPublisher<Result<RetrievalContent, AFError>, Never> {
+    func retrievalPublisher(accessToken: String, query: RetrievalQuery) -> AnyPublisher<Result<RetrievalContent, AFError>, Never> {
         return session.request(
             baseURL.appendingPathComponent("/get"),
             method: .post,

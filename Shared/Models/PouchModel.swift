@@ -25,9 +25,9 @@ class PouchModel: ObservableObject {
 
 extension PouchModel {
     // FIXME: 다듬기
-    func loadItems(query: PocketService.RetrievalQuery) {
+    func retrieveItems(query: PocketService.RetrievalQuery) {
         PocketService.shared
-            .itemsPublisher(accessToken: accessToken, query: query)
+            .retrievalPublisher(accessToken: accessToken, query: query)
             .map { $0.mapError({ PouchPlusError.commonError(.networkError($0)) }) }
             .sink { result in
                 self.latestRetrievalResult = result
