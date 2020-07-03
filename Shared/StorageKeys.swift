@@ -2,6 +2,7 @@ import Foundation
 
 enum AppStorageKey: String {
     case useReaderWhenAvailable
+    case archiveItemsOnOpen
     case itemsGroupingKey
 }
 

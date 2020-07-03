@@ -93,8 +93,8 @@ extension PocketService {
         let resolvedId: String
         let givenUrl: String
         let givenTitle: String
-        let favorite: String
-        let status: String
+        let favorite: Favorite
+        let status: Status
         let timeAdded: String
         let timeUpdated: String
         let timeRead: String
@@ -121,6 +121,17 @@ extension PocketService {
         let images: [String: Image]?
         let videos: [String: Video]?
         let domainMetadata: DomainMetadata?
+        
+        enum Favorite: String, Codable {
+            case unfavorited = "0"
+            case favorited = "1"
+        }
+        
+        enum Status: String, Codable {
+            case unread = "0"
+            case archived = "1"
+            case deleted = "2"
+        }
         
         struct Tag: Codable {
             let itemId: String

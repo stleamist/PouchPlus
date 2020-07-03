@@ -8,6 +8,8 @@ struct ItemRow: View {
         return (!item.resolvedTitle.isEmpty) ? item.resolvedTitle : item.givenTitle
     }
     
+    @AppStorage(AppStorageKey.archiveItemsOnOpen.rawValue) var archiveItemsOnOpen: Bool = false
+    
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             ItemThumbnail(
@@ -37,6 +39,52 @@ struct ItemRow: View {
             }
         }
         .padding(.vertical, 3)
+        .contextMenu {
+            if item.status != .archived {
+                Button {
+                    
+                } label: {
+                    if archiveItemsOnOpen {
+                        Label("Mark as Read", systemImage: "circle")
+                    } else {
+                        Label("Archive", systemImage: "archivebox")
+                    }
+                }
+            } else {
+                Button {
+                    
+                } label: {
+                    if archiveItemsOnOpen {
+                        Label("Mark as Unread", systemImage: "circle.fill")
+                    } else {
+                        Label("Unarchive", systemImage: "plus")
+                    }
+                }
+            }
+            if item.favorite != .favorited {
+                Button {
+                    
+                } label: {
+                    Label("Favorite", systemImage: "star")
+                }
+            } else {
+                Button {
+                    
+                } label: {
+                    Label("Unfavorite", systemImage: "star.slash")
+                }
+            }
+            Button {
+                
+            } label: {
+                Label("Edit Tags...", systemImage: "tag")
+            }
+            Button {
+                
+            } label: {
+                Label("Delete", systemImage: "trash")
+            }
+        }
     }
 }
 

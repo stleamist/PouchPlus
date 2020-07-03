@@ -4,8 +4,9 @@ struct AccountView: View {
     
     @EnvironmentObject var rootModel: RootModel
     
-    @AppStorage(AppStorageKey.useReaderWhenAvailable.rawValue) var useReaderWhenAvailable: Bool = false
     @AppStorage(AppStorageKey.itemsGroupingKey.rawValue) var itemsGroupingKey: DatedItemGroup.GroupingKey = .timeAdded
+    @AppStorage(AppStorageKey.useReaderWhenAvailable.rawValue) var useReaderWhenAvailable: Bool = false
+    @AppStorage(AppStorageKey.archiveItemsOnOpen.rawValue) var archiveItemsOnOpen: Bool = false
     
     var body: some View {
         NavigationView {
@@ -22,6 +23,7 @@ struct AccountView: View {
                         // 현재 iOS 14 베타에서는 작동하지 않는다.
                     }
                     Toggle("Use Reader When Available", isOn: $useReaderWhenAvailable)
+                    Toggle("Archive Items on Open", isOn: $archiveItemsOnOpen)
                 }
                 Section {
                     Button(action: rootModel.removeAccessTokenContent) {
