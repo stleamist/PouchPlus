@@ -5,6 +5,7 @@ class PouchModel: ObservableObject {
     
     @Published var latestRetrievalResult: Result<PocketService.RetrievalContent, PouchPlusError>? = nil
     @Published var latestAdditionResult: Result<PocketService.AdditionContent, PouchPlusError>? = nil
+    @Published var latestModificationResult: Result<PocketService.ModificationContent, PouchPlusError>? = nil
     @Published var items: [String: PocketService.Item] = [:]
     
     // MARK: Access Token
@@ -32,7 +33,9 @@ class PouchModel: ObservableObject {
     
     private func appendItems(_ items: [String: PocketService.Item]) {
         // FIXME: 단순한 merge 대신 새로운 항목 중 가장 오래된 항목의 시간을 기점으로 그 이후 기존의 항목을 제거한 다음 합치기
-        self.items.merge(items) { (_, new) in new }
+        // 삭제 이후에는 삭제된 항목 중 가장 오래된 항목의 시간을 기점으로 위와 같이 진행하기
+//        self.items.merge(items) { (_, new) in new }
+        self.items = items // 임시 코드
     }
 }
 
@@ -51,6 +54,30 @@ extension PouchModel {
             .additionPublisher(accessToken: accessToken, query: query)
             .map { $0.mapError({ PouchPlusError.commonError(.networkError($0)) }) }
             .assign(to: \.latestAdditionResult, on: self)
+            .store(in: &cancellables)
+    }
+    
+    func favoriteItems(queries: [PocketService.ModificationQuery.FavoritingQuery]) {
+        PocketService.shared
+            .modificationPublisher(accessToken: accessToken, query: .init(actions: queries.map { .favorite(query: $0) }))
+            .map { $0.mapError({ PouchPlusError.commonError(.networkError($0)) }) }
+            .assign(to: \.latestModificationResult, on: self)
+            .store(in: &cancellables)
+    }
+    
+    func unfavoriteItems(queries: [PocketService.ModificationQuery.UnfavoritingQuery]) {
+        PocketService.shared
+            .modificationPublisher(accessToken: accessToken, query: .init(actions: queries.map { .unfavorite(query: $0) }))
+            .map { $0.mapError({ PouchPlusError.commonError(.networkError($0)) }) }
+            .assign(to: \.latestModificationResult, on: self)
+            .store(in: &cancellables)
+    }
+    
+    func deleteItems(queries: [PocketService.ModificationQuery.DeletingQuery]) {
+        PocketService.shared
+            .modificationPublisher(accessToken: accessToken, query: .init(actions: queries.map { .delete(query: $0) }))
+            .map { $0.mapError({ PouchPlusError.commonError(.networkError($0)) }) }
+            .assign(to: \.latestModificationResult, on: self)
             .store(in: &cancellables)
     }
 }

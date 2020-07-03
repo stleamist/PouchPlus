@@ -14,6 +14,7 @@ struct ItemList: View {
     // TODO: 모델에서 유래된 @State들을 모델로 옮기기
     @State private var loadingError: PouchPlusError?
     @State private var additionError: PouchPlusError?
+    @State private var modificationError: PouchPlusError?
     
     var datedItemGroups: [DatedItemGroup] {
         DatedItemGroup.groupItems(items: pouchModel.items, by: itemsGroupingKey)
@@ -40,6 +41,11 @@ struct ItemList: View {
                                     }) {
                                         ItemRow(item: item)
                                     }
+                                }
+                                .onDelete { indexSet in
+                                    let items = indexSet.map { group.items[$0] }
+                                    let queries = items.map { PocketService.ModificationQuery.DeletingQuery(itemId: $0.itemId) }
+                                    pouchModel.deleteItems(queries: queries)
                                 }
                             }
                         }
@@ -87,11 +93,23 @@ struct ItemList: View {
                     ()
                 }
             }
+            .onReceive(pouchModel.$latestModificationResult) { result in
+                switch result {
+                case .success:
+                    retrieveItems()
+                case .failure(let error):
+                    self.modificationError = error
+                case .none:
+                    ()
+                }
+            }
             .background(Group {
                 Color.clear
                     .alert(error: $loadingError)
                 Color.clear
                     .alert(error: $additionError)
+                Color.clear
+                    .alert(error: $modificationError)
             })
         }
     }

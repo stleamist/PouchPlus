@@ -2,6 +2,9 @@ import SwiftUI
 
 struct ItemRow: View {
     
+    // TODO: pouchModel을 로우 안에서도 접근하는 것이 맞나? 아니면 상위 뷰에 위임해야 할까?
+    @EnvironmentObject var pouchModel: PouchModel
+    
     var item: PocketService.Item
     
     var title: String {
@@ -10,6 +13,7 @@ struct ItemRow: View {
     
     @AppStorage(AppStorageKey.archiveItemsOnOpen.rawValue) var archiveItemsOnOpen: Bool = false
     
+    // TODO: 로우 디자인 개선하기
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             ItemThumbnail(
@@ -21,11 +25,18 @@ struct ItemRow: View {
                 .padding(.top, 3)
             
             VStack(alignment: .leading, spacing: UIFontMetrics(forTextStyle: .subheadline).scaledValue(for: 4)) {
-                Text(title)
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.primary)
-                    .lineLimit(2)
+                HStack(alignment: .top) {
+                    Text(title)
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
+                        .lineLimit(2)
+                    if item.favorite == .favorited {
+                        Spacer()
+                        Image(systemName: "star.fill")
+                            .renderingMode(.original)
+                    }
+                }
                 Text(item.resolvedUrl.toURL(addPercentEncoding: true)?.host ?? "")
                     .font(.subheadline)
                     .fontWeight(.regular)
@@ -62,15 +73,11 @@ struct ItemRow: View {
                 }
             }
             if item.favorite != .favorited {
-                Button {
-                    
-                } label: {
+                Button(action: favoriteItem) {
                     Label("Favorite", systemImage: "star")
                 }
             } else {
-                Button {
-                    
-                } label: {
+                Button(action: unfavoriteItem) {
                     Label("Unfavorite", systemImage: "star.slash")
                 }
             }
@@ -85,6 +92,14 @@ struct ItemRow: View {
                 Label("Delete", systemImage: "trash")
             }
         }
+    }
+    
+    private func favoriteItem() {
+        pouchModel.favoriteItems(queries: [.init(itemId: item.itemId)])
+    }
+    
+    private func unfavoriteItem() {
+        pouchModel.unfavoriteItems(queries: [.init(itemId: item.itemId)])
     }
 }
 

@@ -33,7 +33,9 @@ extension PocketService {
         let item: AdditionItem
         let status: Int
     }
-
+    
+    // TODO: AdditionContent 안으로 집어넣기
+    // TODO: Retrieval의 Item과 통합 고려하기
     struct AdditionItem: Decodable {
         let itemId: String
         let normalUrl: String
