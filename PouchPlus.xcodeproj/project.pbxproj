@@ -11,6 +11,10 @@
 		C71BE24324A5D77800C6E3F2 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71BE24124A5D77800C6E3F2 /* Asset.swift */; };
 		C71CFFE024AF7953001F09E3 /* PocketService+Modification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFDF24AF7953001F09E3 /* PocketService+Modification.swift */; };
 		C71CFFE124AF7953001F09E3 /* PocketService+Modification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFDF24AF7953001F09E3 /* PocketService+Modification.swift */; };
+		C71CFFE324AF8C46001F09E3 /* Text+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFE224AF8C46001F09E3 /* Text+DateFormatter.swift */; };
+		C71CFFE424AF8C46001F09E3 /* Text+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFE224AF8C46001F09E3 /* Text+DateFormatter.swift */; };
+		C71CFFE624AF8C80001F09E3 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFE524AF8C80001F09E3 /* Utility.swift */; };
+		C71CFFE724AF8C80001F09E3 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFE524AF8C80001F09E3 /* Utility.swift */; };
 		C731243924A7630900950F26 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C731243C24A7630900950F26 /* Localizable.strings */; };
 		C731243A24A7630900950F26 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C731243C24A7630900950F26 /* Localizable.strings */; };
 		C74E622124A3104100C060A1 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E622024A3104100C060A1 /* Tests_iOS.swift */; };
@@ -106,6 +110,8 @@
 /* Begin PBXFileReference section */
 		C71BE24124A5D77800C6E3F2 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		C71CFFDF24AF7953001F09E3 /* PocketService+Modification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PocketService+Modification.swift"; sourceTree = "<group>"; };
+		C71CFFE224AF8C46001F09E3 /* Text+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+DateFormatter.swift"; sourceTree = "<group>"; };
+		C71CFFE524AF8C80001F09E3 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		C731243B24A7630900950F26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C731243D24A7632F00950F26 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C74E620524A3103F00C060A1 /* PouchPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchPlusApp.swift; sourceTree = "<group>"; };
@@ -214,6 +220,7 @@
 				C753295424A4D5FF006C1C08 /* Service */,
 				C74E628F24A42E1D00C060A1 /* PouchPlusError.swift */,
 				C74E626024A35F9D00C060A1 /* Constant.swift */,
+				C71CFFE524AF8C80001F09E3 /* Utility.swift */,
 				C71BE24124A5D77800C6E3F2 /* Asset.swift */,
 				C75329C024A58D1D006C1C08 /* StorageKeys.swift */,
 				C75329C924A5B78E006C1C08 /* KeychainStorage.swift */,
@@ -286,6 +293,7 @@
 				C753294C24A4D5CD006C1C08 /* Kingfisher+FaviconProvider.swift */,
 				C753294B24A4D5CD006C1C08 /* String+ToURL.swift */,
 				C75329C324A5AE4B006C1C08 /* Text+OptionalDate.swift */,
+				C71CFFE224AF8C46001F09E3 /* Text+DateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -528,6 +536,7 @@
 				C786E57E24A4897500459204 /* AccountView.swift in Sources */,
 				C753296824A4D614006C1C08 /* ItemRow.swift in Sources */,
 				C74E624624A317EB00C060A1 /* AuthenticationView.swift in Sources */,
+				C71CFFE624AF8C80001F09E3 /* Utility.swift in Sources */,
 				C786E57924A475E300459204 /* PouchView.swift in Sources */,
 				C780C69824A492780022BC5A /* ValueLabel.swift in Sources */,
 				C71CFFE024AF7953001F09E3 /* PocketService+Modification.swift in Sources */,
@@ -554,6 +563,7 @@
 				C71BE24224A5D77800C6E3F2 /* Asset.swift in Sources */,
 				C75329C124A58D1D006C1C08 /* StorageKeys.swift in Sources */,
 				C74E624924A318F400C060A1 /* FilledButtonStyle.swift in Sources */,
+				C71CFFE324AF8C46001F09E3 /* Text+DateFormatter.swift in Sources */,
 				C753294F24A4D5CD006C1C08 /* Kingfisher+FaviconProvider.swift in Sources */,
 				C74E626124A35F9D00C060A1 /* Constant.swift in Sources */,
 			);
@@ -567,6 +577,7 @@
 				C786E57F24A4897500459204 /* AccountView.swift in Sources */,
 				C753296924A4D614006C1C08 /* ItemRow.swift in Sources */,
 				C74E624724A317EB00C060A1 /* AuthenticationView.swift in Sources */,
+				C71CFFE724AF8C80001F09E3 /* Utility.swift in Sources */,
 				C786E57A24A475E300459204 /* PouchView.swift in Sources */,
 				C780C69924A492780022BC5A /* ValueLabel.swift in Sources */,
 				C71CFFE124AF7953001F09E3 /* PocketService+Modification.swift in Sources */,
@@ -593,6 +604,7 @@
 				C71BE24324A5D77800C6E3F2 /* Asset.swift in Sources */,
 				C75329C224A58D1D006C1C08 /* StorageKeys.swift in Sources */,
 				C74E624A24A318F400C060A1 /* FilledButtonStyle.swift in Sources */,
+				C71CFFE424AF8C46001F09E3 /* Text+DateFormatter.swift in Sources */,
 				C753295024A4D5CD006C1C08 /* Kingfisher+FaviconProvider.swift in Sources */,
 				C74E626224A35F9D00C060A1 /* Constant.swift in Sources */,
 			);

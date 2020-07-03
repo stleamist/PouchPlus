@@ -34,7 +34,7 @@ struct ItemList: View {
                 } else {
                     List {
                         ForEach(datedItemGroups) { group in
-                            Section(header: Text(group.date, style: .date)) {
+                            Section(header: Text(group.date, formatter: Utility.relativeDateFormatter)) {
                                 ForEach(group.items) { item in
                                     Button(action: {
                                         self.selectedURL = item.resolvedUrl.toURL(addPercentEncoding: true) ?? item.givenUrl.toURL(addPercentEncoding: true)
