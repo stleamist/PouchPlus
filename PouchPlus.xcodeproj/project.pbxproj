@@ -70,6 +70,10 @@
 		C75329CB24A5B78E006C1C08 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75329C924A5B78E006C1C08 /* KeychainStorage.swift */; };
 		C780C69824A492780022BC5A /* ValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780C69724A492780022BC5A /* ValueLabel.swift */; };
 		C780C69924A492780022BC5A /* ValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780C69724A492780022BC5A /* ValueLabel.swift */; };
+		C784843E24AD917A00003EFB /* PocketService+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784843D24AD917A00003EFB /* PocketService+Addition.swift */; };
+		C784843F24AD917A00003EFB /* PocketService+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784843D24AD917A00003EFB /* PocketService+Addition.swift */; };
+		C784844124AD98E500003EFB /* ItemEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784844024AD98E500003EFB /* ItemEditView.swift */; };
+		C784844224AD98E500003EFB /* ItemEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784844024AD98E500003EFB /* ItemEditView.swift */; };
 		C786E57324A4733A00459204 /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57224A4733A00459204 /* RootModel.swift */; };
 		C786E57424A4733A00459204 /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57224A4733A00459204 /* RootModel.swift */; };
 		C786E57624A4744900459204 /* PouchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57524A4744900459204 /* PouchModel.swift */; };
@@ -137,6 +141,8 @@
 		C75329C324A5AE4B006C1C08 /* Text+OptionalDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+OptionalDate.swift"; sourceTree = "<group>"; };
 		C75329C924A5B78E006C1C08 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		C780C69724A492780022BC5A /* ValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueLabel.swift; sourceTree = "<group>"; };
+		C784843D24AD917A00003EFB /* PocketService+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PocketService+Addition.swift"; sourceTree = "<group>"; };
+		C784844024AD98E500003EFB /* ItemEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditView.swift; sourceTree = "<group>"; };
 		C786E57224A4733A00459204 /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
 		C786E57524A4744900459204 /* PouchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchModel.swift; sourceTree = "<group>"; };
 		C786E57824A475E300459204 /* PouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchView.swift; sourceTree = "<group>"; };
@@ -289,6 +295,7 @@
 				C753295724A4D5FF006C1C08 /* PocketService+RequestToken.swift */,
 				C753295624A4D5FF006C1C08 /* PocketService+AccessToken.swift */,
 				C753295824A4D5FF006C1C08 /* PocketService+Retrieval.swift */,
+				C784843D24AD917A00003EFB /* PocketService+Addition.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -299,6 +306,7 @@
 				C753296624A4D614006C1C08 /* ItemThumbnail.swift */,
 				C753296524A4D614006C1C08 /* ItemRow.swift */,
 				C753296724A4D614006C1C08 /* ItemList.swift */,
+				C784844024AD98E500003EFB /* ItemEditView.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -532,7 +540,9 @@
 				C753296C24A4D614006C1C08 /* ItemList.swift in Sources */,
 				C75329CA24A5B78E006C1C08 /* KeychainStorage.swift in Sources */,
 				C753296A24A4D614006C1C08 /* ItemThumbnail.swift in Sources */,
+				C784844124AD98E500003EFB /* ItemEditView.swift in Sources */,
 				C75329B824A583A7006C1C08 /* DatedItemGroup.swift in Sources */,
+				C784843E24AD917A00003EFB /* PocketService+Addition.swift in Sources */,
 				C74E625E24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */,
 				C753296224A4D5FF006C1C08 /* PocketService.swift in Sources */,
 				C753296024A4D5FF006C1C08 /* PocketService+Retrieval.swift in Sources */,
@@ -568,7 +578,9 @@
 				C753296D24A4D614006C1C08 /* ItemList.swift in Sources */,
 				C75329CB24A5B78E006C1C08 /* KeychainStorage.swift in Sources */,
 				C753296B24A4D614006C1C08 /* ItemThumbnail.swift in Sources */,
+				C784844224AD98E500003EFB /* ItemEditView.swift in Sources */,
 				C75329B924A583A7006C1C08 /* DatedItemGroup.swift in Sources */,
+				C784843F24AD917A00003EFB /* PocketService+Addition.swift in Sources */,
 				C74E625F24A35E8000C060A1 /* Publisher+AssignOptional.swift in Sources */,
 				C753296324A4D5FF006C1C08 /* PocketService.swift in Sources */,
 				C753296124A4D5FF006C1C08 /* PocketService+Retrieval.swift in Sources */,

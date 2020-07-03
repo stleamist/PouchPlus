@@ -9,9 +9,11 @@ struct ItemList: View {
     @AppStorage(AppStorageKey.itemsGroupingKey.rawValue) var itemsGroupingKey: DatedItemGroup.GroupingKey = .timeAdded
     
     @State private var selectedURL: URL?
+    @State private var showingItemEditView = false
     
     // TODO: 모델에서 유래된 @State들을 모델로 옮기기
     @State private var loadingError: PouchPlusError?
+    @State private var additionError: PouchPlusError?
     
     var datedItemGroups: [DatedItemGroup] {
         DatedItemGroup.groupItems(items: pouchModel.items, by: itemsGroupingKey)
@@ -22,9 +24,10 @@ struct ItemList: View {
             Group {
                 // TODO: 궁극적으로 UIRefreshControl 사용하기
                 if datedItemGroups.isEmpty {
-                    HStack(spacing: 8) {
+                    VStack(spacing: 8) {
                         ProgressView()
-                        Text("Loading...")
+                        Text("LOADING")
+                            .font(.subheadline)
                             .foregroundColor(.secondary)
                     }
                 } else {
@@ -45,15 +48,16 @@ struct ItemList: View {
                 }
             }
             .navigationTitle("Items")
-            .onAppear {
-                pouchModel.retrieveItems(query: .init())
-            }
-            .onReceive(pouchModel.$latestRetrievalResult) { result in
-                if case .failure(let error) = result {
-                    self.loadingError = error
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        self.showingItemEditView = true
+                    } label: {
+                        Image(systemName: "plus")
+                            .imageScale(.large)
+                    }
                 }
             }
-            .alert(error: $loadingError)
             .safariView(item: $selectedURL) { selectedURL in
                 SafariView(
                     url: selectedURL,
@@ -63,7 +67,37 @@ struct ItemList: View {
                 )
                 .preferredControlTintColor(Asset.accentColor)
             }
+            .sheet(isPresented: $showingItemEditView) {
+                ItemEditView(mode: .add)
+                    .environmentObject(pouchModel)
+            }
+            .onAppear(perform: retrieveItems)
+            .onReceive(pouchModel.$latestRetrievalResult) { result in
+                if case .failure(let error) = result {
+                    self.loadingError = error
+                }
+            }
+            .onReceive(pouchModel.$latestAdditionResult) { result in
+                switch result {
+                case .success:
+                    retrieveItems()
+                case .failure(let error):
+                    self.additionError = error
+                case .none:
+                    ()
+                }
+            }
+            .background(Group {
+                Color.clear
+                    .alert(error: $loadingError)
+                Color.clear
+                    .alert(error: $additionError)
+            })
         }
+    }
+    
+    private func retrieveItems() {
+        pouchModel.retrieveItems(query: .init())
     }
 }
 
