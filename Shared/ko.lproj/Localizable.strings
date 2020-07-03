@@ -17,13 +17,13 @@
 "Edit Tags..." = "태그 편집...";
 "Delete" = "삭제";
 
-"Add an Item" = "항목 추가";
+"Add Item" = "항목 추가";
 "Cancel" = "취소";
 "Done" = "완료";
 "Title" = "제목";
 "Tags" = "태그";
-"required" = "필수";
-"optional" = "선택 사항";
+"Required" = "필수 사항";
+"Optional" = "선택 사항";
 
 "Username" = "사용자 이름";
 "Viewing" = "보기";

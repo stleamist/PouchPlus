@@ -26,7 +26,7 @@ struct ItemEditView: View {
                 Section {
                     HStack {
                         Text("URL")
-                        TextField("required", text: $urlString)
+                        TextField("Required", text: $urlString)
                             .textContentType(.URL)
                             .keyboardType(.URL)
                             .autocapitalization(.none)
@@ -34,16 +34,16 @@ struct ItemEditView: View {
                     }
                     HStack {
                         Text("Title")
-                        TextField("optional", text: $title)
+                        TextField("Optional", text: $title)
                     }
                     HStack {
                         Text("Tags")
-                        TextField("optional", text: $tags)
+                        TextField("Optional", text: $tags)
                             .autocapitalization(.none)
                     }
                 }
             }
-            .navigationBarTitle("Add an Item", displayMode: .inline)
+            .navigationBarTitle("Add Item", displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button(action: dismiss) {
