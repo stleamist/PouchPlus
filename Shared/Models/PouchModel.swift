@@ -74,6 +74,16 @@ extension PouchModel {
     }
     
     func deleteItems(queries: [PocketService.ModificationQuery.DeletingQuery]) {
+        deleteLocalItems(itemIDs: queries.map { $0.itemId })
+        deleteRemoteItems(queries: queries)
+    }
+    
+    // 항목이 즉시 삭제되는 것처럼 보이게 하는 효과를 위해 갱신 전 로컬 스토리지에서도 항목을 삭제한다.
+    private func deleteLocalItems(itemIDs: [String]) {
+        itemIDs.forEach { items.removeValue(forKey: $0) }
+    }
+    
+    private func deleteRemoteItems(queries: [PocketService.ModificationQuery.DeletingQuery]) {
         PocketService.shared
             .modificationPublisher(accessToken: accessToken, query: .init(actions: queries.map { .delete(query: $0) }))
             .map { $0.mapError({ PouchPlusError.commonError(.networkError($0)) }) }
