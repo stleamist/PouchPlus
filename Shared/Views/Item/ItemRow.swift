@@ -31,10 +31,15 @@ struct ItemRow: View {
                         .fontWeight(.semibold)
                         .foregroundColor(.primary)
                         .lineLimit(2)
+                    Spacer()
                     if item.favorite == .favorited {
-                        Spacer()
                         Image(systemName: "star.fill")
                             .renderingMode(.original)
+                    }
+                    if item.status == .unread {
+                        Image(systemName: "circle.fill")
+                            .imageScale(.small)
+                            .foregroundColor(.blue)
                     }
                 }
                 Text(item.resolvedUrl.toURL(addPercentEncoding: true)?.host ?? "")
@@ -52,9 +57,7 @@ struct ItemRow: View {
         .padding(.vertical, 3)
         .contextMenu {
             if item.status != .archived {
-                Button {
-                    
-                } label: {
+                Button(action: archiveItem) {
                     if archiveItemsOnOpen {
                         Label("Mark as Read", systemImage: "circle")
                     } else {
@@ -62,9 +65,7 @@ struct ItemRow: View {
                     }
                 }
             } else {
-                Button {
-                    
-                } label: {
+                Button(action: readdItem){
                     if archiveItemsOnOpen {
                         Label("Mark as Unread", systemImage: "circle.fill")
                     } else {
@@ -81,17 +82,21 @@ struct ItemRow: View {
                     Label("Unfavorite", systemImage: "star.slash")
                 }
             }
-            Button {
-                
-            } label: {
+            Button(action: {}) {
                 Label("Edit Tags...", systemImage: "tag")
             }
-            Button {
-                
-            } label: {
+            Button(action: deleteItem) {
                 Label("Delete", systemImage: "trash")
             }
         }
+    }
+    
+    private func archiveItem() {
+        pouchModel.archiveItems(queries: [.init(itemId: item.itemId)])
+    }
+    
+    private func readdItem() {
+        pouchModel.readdItems(queries: [.init(itemId: item.itemId)])
     }
     
     private func favoriteItem() {
@@ -100,6 +105,10 @@ struct ItemRow: View {
     
     private func unfavoriteItem() {
         pouchModel.unfavoriteItems(queries: [.init(itemId: item.itemId)])
+    }
+    
+    private func deleteItem() {
+        pouchModel.deleteItems(queries: [.init(itemId: item.itemId)])
     }
 }
 

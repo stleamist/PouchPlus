@@ -115,7 +115,7 @@ struct ItemList: View {
     }
     
     private func retrieveItems() {
-        pouchModel.retrieveItems(query: .init())
+        pouchModel.retrieveItems(query: .init(state: .all))
     }
 }
 

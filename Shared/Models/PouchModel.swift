@@ -57,6 +57,22 @@ extension PouchModel {
             .store(in: &cancellables)
     }
     
+    func archiveItems(queries: [PocketService.ModificationQuery.ArchivingQuery]) {
+        PocketService.shared
+            .modificationPublisher(accessToken: accessToken, query: .init(actions: queries.map { .archive(query: $0) }))
+            .map { $0.mapError({ PouchPlusError.commonError(.networkError($0)) }) }
+            .assign(to: \.latestModificationResult, on: self)
+            .store(in: &cancellables)
+    }
+    
+    func readdItems(queries: [PocketService.ModificationQuery.ReaddingQuery]) {
+        PocketService.shared
+            .modificationPublisher(accessToken: accessToken, query: .init(actions: queries.map { .readd(query: $0) }))
+            .map { $0.mapError({ PouchPlusError.commonError(.networkError($0)) }) }
+            .assign(to: \.latestModificationResult, on: self)
+            .store(in: &cancellables)
+    }
+    
     func favoriteItems(queries: [PocketService.ModificationQuery.FavoritingQuery]) {
         PocketService.shared
             .modificationPublisher(accessToken: accessToken, query: .init(actions: queries.map { .favorite(query: $0) }))
