@@ -3,45 +3,37 @@ import KingfisherSwiftUI
 
 struct ItemThumbnail: View {
     
-    var imageURL: URL?
-    var logoURL: URL?
-    var pageURL: URL?
-    var title: String
+    var url: URL?
     
-    @State private var shouldShowIcon = false
+    @State private var imageNotFound = false
     
-    var body: some View {
-        imageView
-            .cancelOnDisappear(true)
-            .resizable()
-            .renderingMode(.original)
-            .placeholder {
-                ZStack {
-                    Color(.systemGray3)
-                    Text(title.first?.uppercased() ?? "").font(.system(size: 44, weight: .light)).foregroundColor(.white)
-                }
-            }
-            .aspectRatio(contentMode: .fill)
-            .background(Color(.systemGray6))
-            .frame(width: 72, height: 72)
-            .clipShape(RoundedRectangle(cornerRadius: 6, style: .circular))
+    private var showsImage: Bool {
+        return (url != nil) && (!imageNotFound)
     }
     
-    var imageView: KFImage {
-        if !shouldShowIcon {
-            return KFImage(imageURL ?? logoURL)
-                .onFailure { _ in self.shouldShowIcon = true }
-        } else {
-            guard let pageURL = pageURL else {
-                return KFImage(source: nil)
+    var body: some View {
+        Group {
+            if showsImage {
+                KFImage(url)
+                    .onFailure { _ in imageNotFound = true }
+                    .cancelOnDisappear(true)
+                    .resizable()
+                    .renderingMode(.original)
+                    .aspectRatio(contentMode: .fill)
+                    .background(Color(.systemGray6))
+            } else {
+                EmptyView()
             }
-            return KFImage(source: .provider(KFFaviconProvider(url: pageURL)))
         }
     }
 }
 
 struct ItemThumbnail_Previews: PreviewProvider {
     static var previews: some View {
-        ItemThumbnail(title: "Title")
+        Group {
+            ItemThumbnail(url: URL(string: "https://www.apple.com/newsroom/images/live-action/wwdc-2020/Apple_WWDC20-keynote-tim-cook_06222020_big.jpg.large_2x.jpg"))
+            ItemThumbnail(url: URL(string: "https://www.apple.com/newsroom/images/live-action/wwdc-2020/Apple_WWDC20-keynote-tim-cook_06222020_big.jpg.large_3x.jpg"))
+        }
+            .previewLayout(.sizeThatFits)
     }
 }

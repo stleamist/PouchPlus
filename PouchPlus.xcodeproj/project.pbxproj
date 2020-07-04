@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C70BFC8524B0C70F0061C054 /* ItemThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BFC8424B0C70F0061C054 /* ItemThumbnail.swift */; };
+		C70BFC8624B0C70F0061C054 /* ItemThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BFC8424B0C70F0061C054 /* ItemThumbnail.swift */; };
+		C70BFC8824B0CBBD0061C054 /* ItemFavicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BFC8724B0CBBD0061C054 /* ItemFavicon.swift */; };
+		C70BFC8924B0CBBD0061C054 /* ItemFavicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BFC8724B0CBBD0061C054 /* ItemFavicon.swift */; };
 		C71BE24224A5D77800C6E3F2 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71BE24124A5D77800C6E3F2 /* Asset.swift */; };
 		C71BE24324A5D77800C6E3F2 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71BE24124A5D77800C6E3F2 /* Asset.swift */; };
 		C71CFFE024AF7953001F09E3 /* PocketService+Modification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFDF24AF7953001F09E3 /* PocketService+Modification.swift */; };
@@ -15,8 +19,8 @@
 		C71CFFE424AF8C46001F09E3 /* Text+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFE224AF8C46001F09E3 /* Text+DateFormatter.swift */; };
 		C71CFFE624AF8C80001F09E3 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFE524AF8C80001F09E3 /* Utility.swift */; };
 		C71CFFE724AF8C80001F09E3 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFE524AF8C80001F09E3 /* Utility.swift */; };
-		C71CFFEC24B074CD001F09E3 /* ItemRow2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFEB24B074CD001F09E3 /* ItemRow2.swift */; };
-		C71CFFED24B074CD001F09E3 /* ItemRow2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFEB24B074CD001F09E3 /* ItemRow2.swift */; };
+		C71CFFEC24B074CD001F09E3 /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFEB24B074CD001F09E3 /* ItemRow.swift */; };
+		C71CFFED24B074CD001F09E3 /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFEB24B074CD001F09E3 /* ItemRow.swift */; };
 		C731243924A7630900950F26 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C731243C24A7630900950F26 /* Localizable.strings */; };
 		C731243A24A7630900950F26 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C731243C24A7630900950F26 /* Localizable.strings */; };
 		C74E622124A3104100C060A1 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E622024A3104100C060A1 /* Tests_iOS.swift */; };
@@ -57,10 +61,6 @@
 		C753296124A4D5FF006C1C08 /* PocketService+Retrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753295824A4D5FF006C1C08 /* PocketService+Retrieval.swift */; };
 		C753296224A4D5FF006C1C08 /* PocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753295924A4D5FF006C1C08 /* PocketService.swift */; };
 		C753296324A4D5FF006C1C08 /* PocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753295924A4D5FF006C1C08 /* PocketService.swift */; };
-		C753296824A4D614006C1C08 /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753296524A4D614006C1C08 /* ItemRow.swift */; };
-		C753296924A4D614006C1C08 /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753296524A4D614006C1C08 /* ItemRow.swift */; };
-		C753296A24A4D614006C1C08 /* ItemThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753296624A4D614006C1C08 /* ItemThumbnail.swift */; };
-		C753296B24A4D614006C1C08 /* ItemThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753296624A4D614006C1C08 /* ItemThumbnail.swift */; };
 		C753296C24A4D614006C1C08 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753296724A4D614006C1C08 /* ItemList.swift */; };
 		C753296D24A4D614006C1C08 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753296724A4D614006C1C08 /* ItemList.swift */; };
 		C753297024A4D663006C1C08 /* FullScreenSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = C753296F24A4D663006C1C08 /* FullScreenSafariView */; };
@@ -110,11 +110,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C70BFC8424B0C70F0061C054 /* ItemThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemThumbnail.swift; sourceTree = "<group>"; };
+		C70BFC8724B0CBBD0061C054 /* ItemFavicon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFavicon.swift; sourceTree = "<group>"; };
 		C71BE24124A5D77800C6E3F2 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		C71CFFDF24AF7953001F09E3 /* PocketService+Modification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PocketService+Modification.swift"; sourceTree = "<group>"; };
 		C71CFFE224AF8C46001F09E3 /* Text+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+DateFormatter.swift"; sourceTree = "<group>"; };
 		C71CFFE524AF8C80001F09E3 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		C71CFFEB24B074CD001F09E3 /* ItemRow2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow2.swift; sourceTree = "<group>"; };
+		C71CFFEB24B074CD001F09E3 /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		C731243B24A7630900950F26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C731243D24A7632F00950F26 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C74E620524A3103F00C060A1 /* PouchPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchPlusApp.swift; sourceTree = "<group>"; };
@@ -145,8 +147,6 @@
 		C753295724A4D5FF006C1C08 /* PocketService+RequestToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PocketService+RequestToken.swift"; sourceTree = "<group>"; };
 		C753295824A4D5FF006C1C08 /* PocketService+Retrieval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PocketService+Retrieval.swift"; sourceTree = "<group>"; };
 		C753295924A4D5FF006C1C08 /* PocketService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PocketService.swift; sourceTree = "<group>"; };
-		C753296524A4D614006C1C08 /* ItemRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
-		C753296624A4D614006C1C08 /* ItemThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemThumbnail.swift; sourceTree = "<group>"; };
 		C753296724A4D614006C1C08 /* ItemList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
 		C75329B724A583A7006C1C08 /* DatedItemGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatedItemGroup.swift; sourceTree = "<group>"; };
 		C75329C024A58D1D006C1C08 /* StorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageKeys.swift; sourceTree = "<group>"; };
@@ -318,9 +318,9 @@
 		C753296424A4D614006C1C08 /* Item */ = {
 			isa = PBXGroup;
 			children = (
-				C753296624A4D614006C1C08 /* ItemThumbnail.swift */,
-				C753296524A4D614006C1C08 /* ItemRow.swift */,
-				C71CFFEB24B074CD001F09E3 /* ItemRow2.swift */,
+				C70BFC8724B0CBBD0061C054 /* ItemFavicon.swift */,
+				C70BFC8424B0C70F0061C054 /* ItemThumbnail.swift */,
+				C71CFFEB24B074CD001F09E3 /* ItemRow.swift */,
 				C753296724A4D614006C1C08 /* ItemList.swift */,
 				C784844024AD98E500003EFB /* ItemEditView.swift */,
 			);
@@ -538,16 +538,16 @@
 			files = (
 				C753295C24A4D5FF006C1C08 /* PocketService+AccessToken.swift in Sources */,
 				C786E57E24A4897500459204 /* AccountView.swift in Sources */,
-				C753296824A4D614006C1C08 /* ItemRow.swift in Sources */,
 				C74E624624A317EB00C060A1 /* AuthenticationView.swift in Sources */,
 				C71CFFE624AF8C80001F09E3 /* Utility.swift in Sources */,
 				C786E57924A475E300459204 /* PouchView.swift in Sources */,
-				C71CFFEC24B074CD001F09E3 /* ItemRow2.swift in Sources */,
+				C71CFFEC24B074CD001F09E3 /* ItemRow.swift in Sources */,
 				C780C69824A492780022BC5A /* ValueLabel.swift in Sources */,
 				C71CFFE024AF7953001F09E3 /* PocketService+Modification.swift in Sources */,
 				C786E57624A4744900459204 /* PouchModel.swift in Sources */,
 				C753295E24A4D5FF006C1C08 /* PocketService+RequestToken.swift in Sources */,
 				C753294D24A4D5CD006C1C08 /* String+ToURL.swift in Sources */,
+				C70BFC8524B0C70F0061C054 /* ItemThumbnail.swift in Sources */,
 				C74E629324A442F500C060A1 /* View+AlertErrorItem.swift in Sources */,
 				C753295A24A4D5FF006C1C08 /* PocketService+AuthenticationInterceptor.swift in Sources */,
 				C74E623024A3104100C060A1 /* RootView.swift in Sources */,
@@ -558,7 +558,7 @@
 				C786E57324A4733A00459204 /* RootModel.swift in Sources */,
 				C753296C24A4D614006C1C08 /* ItemList.swift in Sources */,
 				C75329CA24A5B78E006C1C08 /* KeychainStorage.swift in Sources */,
-				C753296A24A4D614006C1C08 /* ItemThumbnail.swift in Sources */,
+				C70BFC8824B0CBBD0061C054 /* ItemFavicon.swift in Sources */,
 				C784844124AD98E500003EFB /* ItemEditView.swift in Sources */,
 				C75329B824A583A7006C1C08 /* DatedItemGroup.swift in Sources */,
 				C784843E24AD917A00003EFB /* PocketService+Addition.swift in Sources */,
@@ -580,16 +580,16 @@
 			files = (
 				C753295D24A4D5FF006C1C08 /* PocketService+AccessToken.swift in Sources */,
 				C786E57F24A4897500459204 /* AccountView.swift in Sources */,
-				C753296924A4D614006C1C08 /* ItemRow.swift in Sources */,
 				C74E624724A317EB00C060A1 /* AuthenticationView.swift in Sources */,
 				C71CFFE724AF8C80001F09E3 /* Utility.swift in Sources */,
 				C786E57A24A475E300459204 /* PouchView.swift in Sources */,
-				C71CFFED24B074CD001F09E3 /* ItemRow2.swift in Sources */,
+				C71CFFED24B074CD001F09E3 /* ItemRow.swift in Sources */,
 				C780C69924A492780022BC5A /* ValueLabel.swift in Sources */,
 				C71CFFE124AF7953001F09E3 /* PocketService+Modification.swift in Sources */,
 				C786E57724A4744900459204 /* PouchModel.swift in Sources */,
 				C753295F24A4D5FF006C1C08 /* PocketService+RequestToken.swift in Sources */,
 				C753294E24A4D5CD006C1C08 /* String+ToURL.swift in Sources */,
+				C70BFC8624B0C70F0061C054 /* ItemThumbnail.swift in Sources */,
 				C74E629424A442F500C060A1 /* View+AlertErrorItem.swift in Sources */,
 				C753295B24A4D5FF006C1C08 /* PocketService+AuthenticationInterceptor.swift in Sources */,
 				C74E623124A3104100C060A1 /* RootView.swift in Sources */,
@@ -600,7 +600,7 @@
 				C786E57424A4733A00459204 /* RootModel.swift in Sources */,
 				C753296D24A4D614006C1C08 /* ItemList.swift in Sources */,
 				C75329CB24A5B78E006C1C08 /* KeychainStorage.swift in Sources */,
-				C753296B24A4D614006C1C08 /* ItemThumbnail.swift in Sources */,
+				C70BFC8924B0CBBD0061C054 /* ItemFavicon.swift in Sources */,
 				C784844224AD98E500003EFB /* ItemEditView.swift in Sources */,
 				C75329B924A583A7006C1C08 /* DatedItemGroup.swift in Sources */,
 				C784843F24AD917A00003EFB /* PocketService+Addition.swift in Sources */,

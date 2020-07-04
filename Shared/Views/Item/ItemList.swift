@@ -41,6 +41,7 @@ struct ItemList: View {
                                     }) {
                                         ItemRow(item: item)
                                     }
+                                    .listRowInsets(EdgeInsets())
                                 }
                                 .onDelete { indexSet in
                                     let items = indexSet.map { group.items[$0] }
@@ -115,7 +116,7 @@ struct ItemList: View {
     }
     
     private func retrieveItems() {
-        pouchModel.retrieveItems(query: .init(state: .all))
+        pouchModel.retrieveItems(query: .init(state: .all, detailType: .complete))
     }
 }
 
