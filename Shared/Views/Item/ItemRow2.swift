@@ -36,69 +36,81 @@ struct ItemRow2: View {
     @ScaledMetric private var tagSpacing: CGFloat = 6
     
     var body: some View {
-        HStack(alignment: .top, spacing: 0) {
-            VStack(alignment: .center, spacing: verticalSpacing) {
-                Group {
-                    Color(.systemTeal)
-                        .cornerRadius(2)
-                        .frame(width: faviconLength, height: faviconLength)
-                    Circle()
-                        .fill(Color.accentColor)
-                        .frame(width: unreadBadgeLength, height: unreadBadgeLength)
-                    Image(systemName: "star.fill")
-                        .font(Font.subheadline.weight(.regular))
-                        .foregroundColor(.yellow)
-                }
-                .frame(
-                    width: accessoryContainerLength,
-                    height: accessoryContainerLength
-                )
-            }
-            .frame(width: seperatorInset)
-            VStack(alignment: .leading, spacing: verticalSpacing) {
-                HStack(alignment: .center) {
-                    Text("Thoughts on Flash")
+        VStack(alignment: .leading, spacing: verticalSpacing) {
+            HStack(alignment: .disclosureIndicator, spacing: 0) {
+                Color(.systemTeal)
+                    .cornerRadius(2)
+                    .frame(width: faviconLength, height: faviconLength)
+                    .frame(width: seperatorInset)
+                    .alignmentGuide(.disclosureIndicator, computeValue: { d in d[VerticalAlignment.center] })
+                HStack(alignment: .firstTextBaseline, spacing: 0) {
+                    Text("The Quick Brown Fox Jumps over the Lazy Dog")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .foregroundColor(Color(.label))
                         .lineLimit(2)
-                    Spacer()
+                    Spacer(minLength: horizontalSpacing)
                     Text(Image(systemName: "chevron.right"))
                         .font(.subheadline)
                         .fontWeight(.medium)
                         .foregroundColor(Color(.tertiaryLabel))
+                        .alignmentGuide(.disclosureIndicator, computeValue: { d in d[VerticalAlignment.center] })
                 }
-                HStack(alignment: .top, spacing: horizontalSpacing) {
-                    VStack(alignment: .leading, spacing: verticalSpacing) {
+            }
+            HStack(alignment: .top, spacing: horizontalSpacing) {
+                VStack(alignment: .leading, spacing: verticalSpacing) {
+                    HStack(alignment: .center, spacing: 0) {
+                        Circle()
+                            .fill(Color.accentColor)
+                            .frame(width: unreadBadgeLength, height: unreadBadgeLength)
+                            .frame(width: seperatorInset)
                         Text("www.apple.com")
                             .font(.subheadline)
                             .fontWeight(.regular)
                             .foregroundColor(Color(.label))
                             .lineLimit(1)
-                        Text("Apple has a long relationship with Adobe. In fact, we met Adobe’s founders when they were in their proverbial garage.")
-                            .font(.subheadline)
-                            .fontWeight(.regular)
-                            .foregroundColor(Color(.secondaryLabel))
-                            .lineLimit(2)
-                        ScrollView(.horizontal) {
-                            HStack(spacing: tagSpacing) {
-                                TagToken("apple")
-                                TagToken("ipad")
-                                TagToken("adobe")
-                                TagToken("flash")
+                    }
+                    HStack(alignment: .firstTextBaseline, spacing: 0) {
+                        Image(systemName: "star.fill")
+                            .font(Font.subheadline.weight(.regular))
+                            .foregroundColor(.yellow)
+                            .frame(width: seperatorInset)
+                        VStack(alignment: .leading, spacing: verticalSpacing) {
+                            Text("Apple has a long relationship with Adobe. In fact, we met Adobe’s founders when they were in their proverbial garage.")
+                                .font(.subheadline)
+                                .fontWeight(.regular)
+                                .foregroundColor(Color(.secondaryLabel))
+                                .lineLimit(2)
+                                .fixedSize(horizontal: false, vertical: true) // Force enable lineLimit
+                            ScrollView(.horizontal) {
+                                HStack(spacing: tagSpacing) {
+                                    TagToken("apple")
+                                    TagToken("ipad")
+                                    TagToken("adobe")
+                                    TagToken("flash")
+                                }
                             }
                         }
                     }
-                    Color(.tertiarySystemFill)
-                        .cornerRadius(4)
-                        .frame(width: min(thumbnailLength, 72), height: min(thumbnailLength, 72))
-                        .padding(.top, thumbnailTopPadding)
                 }
+                Color(.tertiarySystemFill)
+                    .cornerRadius(4)
+                    .frame(width: min(thumbnailLength, 72), height: min(thumbnailLength, 72))
+                    .padding(.top, thumbnailTopPadding)
             }
-            .padding(.trailing, horizontalPadding)
         }
+        .padding(.trailing, horizontalPadding)
         .padding(.vertical, verticalPadding)
     }
+}
+
+private extension VerticalAlignment {
+    private enum DisclosureIndicatorAlignment: AlignmentID {
+        static func defaultValue(in d: ViewDimensions) -> CGFloat {
+            return d[VerticalAlignment.center]
+        }
+    }
+    static let disclosureIndicator = VerticalAlignment(DisclosureIndicatorAlignment.self)
 }
 
 struct ItemRow2_Previews: PreviewProvider {
