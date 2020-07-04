@@ -15,6 +15,8 @@
 		C71CFFE424AF8C46001F09E3 /* Text+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFE224AF8C46001F09E3 /* Text+DateFormatter.swift */; };
 		C71CFFE624AF8C80001F09E3 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFE524AF8C80001F09E3 /* Utility.swift */; };
 		C71CFFE724AF8C80001F09E3 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFE524AF8C80001F09E3 /* Utility.swift */; };
+		C71CFFEC24B074CD001F09E3 /* ItemRow2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFEB24B074CD001F09E3 /* ItemRow2.swift */; };
+		C71CFFED24B074CD001F09E3 /* ItemRow2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFEB24B074CD001F09E3 /* ItemRow2.swift */; };
 		C731243924A7630900950F26 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C731243C24A7630900950F26 /* Localizable.strings */; };
 		C731243A24A7630900950F26 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C731243C24A7630900950F26 /* Localizable.strings */; };
 		C74E622124A3104100C060A1 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E622024A3104100C060A1 /* Tests_iOS.swift */; };
@@ -112,6 +114,7 @@
 		C71CFFDF24AF7953001F09E3 /* PocketService+Modification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PocketService+Modification.swift"; sourceTree = "<group>"; };
 		C71CFFE224AF8C46001F09E3 /* Text+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+DateFormatter.swift"; sourceTree = "<group>"; };
 		C71CFFE524AF8C80001F09E3 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		C71CFFEB24B074CD001F09E3 /* ItemRow2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow2.swift; sourceTree = "<group>"; };
 		C731243B24A7630900950F26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C731243D24A7632F00950F26 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C74E620524A3103F00C060A1 /* PouchPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchPlusApp.swift; sourceTree = "<group>"; };
@@ -317,6 +320,7 @@
 			children = (
 				C753296624A4D614006C1C08 /* ItemThumbnail.swift */,
 				C753296524A4D614006C1C08 /* ItemRow.swift */,
+				C71CFFEB24B074CD001F09E3 /* ItemRow2.swift */,
 				C753296724A4D614006C1C08 /* ItemList.swift */,
 				C784844024AD98E500003EFB /* ItemEditView.swift */,
 			);
@@ -538,6 +542,7 @@
 				C74E624624A317EB00C060A1 /* AuthenticationView.swift in Sources */,
 				C71CFFE624AF8C80001F09E3 /* Utility.swift in Sources */,
 				C786E57924A475E300459204 /* PouchView.swift in Sources */,
+				C71CFFEC24B074CD001F09E3 /* ItemRow2.swift in Sources */,
 				C780C69824A492780022BC5A /* ValueLabel.swift in Sources */,
 				C71CFFE024AF7953001F09E3 /* PocketService+Modification.swift in Sources */,
 				C786E57624A4744900459204 /* PouchModel.swift in Sources */,
@@ -579,6 +584,7 @@
 				C74E624724A317EB00C060A1 /* AuthenticationView.swift in Sources */,
 				C71CFFE724AF8C80001F09E3 /* Utility.swift in Sources */,
 				C786E57A24A475E300459204 /* PouchView.swift in Sources */,
+				C71CFFED24B074CD001F09E3 /* ItemRow2.swift in Sources */,
 				C780C69924A492780022BC5A /* ValueLabel.swift in Sources */,
 				C71CFFE124AF7953001F09E3 /* PocketService+Modification.swift in Sources */,
 				C786E57724A4744900459204 /* PouchModel.swift in Sources */,
