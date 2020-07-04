@@ -36,14 +36,7 @@ struct ItemRow: View {
                     if item.favorite == .favorited {
                         Image(systemName: "star.fill")
                             .renderingMode(.original)
-                            .imageScale(.small)
                             .font(.subheadline)
-                    }
-                    if item.status == .unread {
-                        Image(systemName: "circle.fill")
-                            .foregroundColor(.blue)
-                            .imageScale(.small)
-                            .font(.footnote)
                     }
                 }
                 Text(item.resolvedUrl.toURL(addPercentEncoding: true)?.host ?? "")
