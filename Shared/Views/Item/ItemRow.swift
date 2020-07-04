@@ -5,7 +5,6 @@ struct ItemRow: View {
     // TODO: pouchModel을 로우 안에서도 접근하는 것이 맞나? 아니면 상위 뷰에 위임해야 할까?
     @EnvironmentObject var pouchModel: PouchModel
     
-    @AppStorage(AppStorageKey.archiveItemsOnOpen.rawValue) var archiveItemsOnOpen: Bool = false
     @ScaledMetric(relativeTo: .subheadline) var spacing: CGFloat = 4
     
     var item: PocketService.Item
@@ -55,19 +54,11 @@ struct ItemRow: View {
         .contextMenu {
             if item.status != .archived {
                 Button(action: archiveItem) {
-                    if archiveItemsOnOpen {
-                        Label("Mark as Read", systemImage: "circle")
-                    } else {
-                        Label("Archive", systemImage: "archivebox")
-                    }
+                    Label("Archive", systemImage: "archivebox")
                 }
             } else {
                 Button(action: readdItem){
-                    if archiveItemsOnOpen {
-                        Label("Mark as Unread", systemImage: "circle.fill")
-                    } else {
-                        Label("Unarchive", systemImage: "plus")
-                    }
+                    Label("Unarchive", systemImage: "plus")
                 }
             }
             if item.favorite != .favorited {

@@ -1,9 +1,8 @@
 import Foundation
 
 enum AppStorageKey: String {
-    case useReaderWhenAvailable
-    case archiveItemsOnOpen
     case itemsGroupingKey
+    case useReaderWhenAvailable
 }
 
 enum KeychainStorageKey: String {

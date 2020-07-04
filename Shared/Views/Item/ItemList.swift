@@ -5,8 +5,8 @@ struct ItemList: View {
     
     @EnvironmentObject var pouchModel: PouchModel
     
-    @AppStorage(AppStorageKey.useReaderWhenAvailable.rawValue) var useReaderWhenAvailable: Bool = false
     @AppStorage(AppStorageKey.itemsGroupingKey.rawValue) var itemsGroupingKey: DatedItemGroup.GroupingKey = .timeAdded
+    @AppStorage(AppStorageKey.useReaderWhenAvailable.rawValue) var useReaderWhenAvailable: Bool = false
     
     @State private var selectedURL: URL?
     @State private var showingItemEditView = false
