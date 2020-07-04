@@ -43,11 +43,11 @@ struct ItemList: View {
                                     }
                                     .listRowInsets(EdgeInsets())
                                 }
-                                .onDelete { indexSet in
-                                    let items = indexSet.map { group.items[$0] }
-                                    let queries = items.map { PocketService.ModificationQuery.DeletingQuery(itemId: $0.itemId) }
-                                    pouchModel.deleteItems(queries: queries)
-                                }
+//                                .onDelete { indexSet in
+//                                    let items = indexSet.map { group.items[$0] }
+//                                    let queries = items.map { PocketService.ModificationQuery.DeletingQuery(itemId: $0.itemId) }
+//                                    pouchModel.deleteItems(queries: queries)
+//                                }
                             }
                         }
                     }

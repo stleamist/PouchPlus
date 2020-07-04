@@ -69,7 +69,7 @@ struct ItemRow: View {
     }
     
     private var tags: [String] {
-        return item.tags?.map { $1.tag } ?? []
+        return item.tags?.map { $1.tag }.sorted() ?? []
     }
     
     // MARK: Metrics
@@ -167,7 +167,7 @@ struct ItemRow: View {
                                 .foregroundColor(Color(.secondaryLabel))
                                 .lineLimit(tags.isEmpty ? 3 : 2)
                                 .fixedSize(horizontal: false, vertical: true) // Force enable lineLimit
-                            ScrollView(.horizontal) {
+                            ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: tagSpacing) {
                                     ForEach(tags, id: \.self) { tag in
                                         TagToken(tag)

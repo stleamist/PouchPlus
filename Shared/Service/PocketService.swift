@@ -14,7 +14,9 @@ struct PocketService {
     
     let parameterEncoder: JSONParameterEncoder = {
         let encoder = JSONEncoder()
-        encoder.keyEncodingStrategy = .convertToSnakeCase
+        // AuthenticationInterceptor가 담당하는 consumer_key, access_token만 스네이크 케이스를 사용하고
+        // 그 외에는 카멜 케이스를 사용한다.
+        encoder.keyEncodingStrategy = .useDefaultKeys
         let parameterEncoder = JSONParameterEncoder(encoder: encoder)
         return parameterEncoder
     }()
