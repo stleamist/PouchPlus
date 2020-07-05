@@ -1,4 +1,5 @@
 import Foundation
+import Disk
 
 class RootModel: ObservableObject {
     @KeychainStorage(.accessTokenContent) private(set) var accessTokenContent: PocketService.AccessTokenContent? = nil {
@@ -16,5 +17,11 @@ extension RootModel {
     }
     func removeAccessTokenContent() {
         self.accessTokenContent = nil
+    }
+}
+
+extension RootModel {
+    func clearCache() {
+        try? Disk.clear(.caches)
     }
 }

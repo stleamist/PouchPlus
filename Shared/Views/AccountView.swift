@@ -24,6 +24,13 @@ struct AccountView: View {
                     Toggle("Use Reader When Available", isOn: $useReaderWhenAvailable)
                 }
                 Section {
+                    Button(action: rootModel.clearCache) {
+                        Text("Clear Cache")
+                            .foregroundColor(.red)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    }
+                }
+                Section {
                     Button(action: rootModel.removeAccessTokenContent) {
                         Text("Log Out")
                             .foregroundColor(.red)

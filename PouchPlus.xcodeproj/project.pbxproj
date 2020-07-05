@@ -11,6 +11,7 @@
 		C70BFC8624B0C70F0061C054 /* ItemThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BFC8424B0C70F0061C054 /* ItemThumbnail.swift */; };
 		C70BFC8824B0CBBD0061C054 /* ItemFavicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BFC8724B0CBBD0061C054 /* ItemFavicon.swift */; };
 		C70BFC8924B0CBBD0061C054 /* ItemFavicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BFC8724B0CBBD0061C054 /* ItemFavicon.swift */; };
+		C70BFC8C24B16BD10061C054 /* Disk in Frameworks */ = {isa = PBXBuildFile; productRef = C70BFC8B24B16BD10061C054 /* Disk */; };
 		C71BE24224A5D77800C6E3F2 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71BE24124A5D77800C6E3F2 /* Asset.swift */; };
 		C71BE24324A5D77800C6E3F2 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71BE24124A5D77800C6E3F2 /* Asset.swift */; };
 		C71CFFE024AF7953001F09E3 /* PocketService+Modification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFFDF24AF7953001F09E3 /* PocketService+Modification.swift */; };
@@ -173,6 +174,7 @@
 				C753297924A4D7A8006C1C08 /* FavIcon in Frameworks */,
 				C753297024A4D663006C1C08 /* FullScreenSafariView in Frameworks */,
 				C753297624A4D77A006C1C08 /* KingfisherSwiftUI in Frameworks */,
+				C70BFC8C24B16BD10061C054 /* Disk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +384,7 @@
 				C753297524A4D77A006C1C08 /* KingfisherSwiftUI */,
 				C753297824A4D7A8006C1C08 /* FavIcon */,
 				C75329C724A5B43D006C1C08 /* KeychainAccess */,
+				C70BFC8B24B16BD10061C054 /* Disk */,
 			);
 			productName = iOS;
 			productReference = C74E620C24A3104000C060A1 /* PouchPlus.app */;
@@ -483,6 +486,7 @@
 				C753297424A4D77A006C1C08 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				C753297724A4D7A8006C1C08 /* XCRemoteSwiftPackageReference "FavIcon" */,
 				C75329C624A5B43D006C1C08 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				C70BFC8A24B16BD10061C054 /* XCRemoteSwiftPackageReference "Disk" */,
 			);
 			productRefGroup = C74E620D24A3104000C060A1 /* Products */;
 			projectDirPath = "";
@@ -1006,6 +1010,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C70BFC8A24B16BD10061C054 /* XCRemoteSwiftPackageReference "Disk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/saoudrizwan/Disk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.4;
+			};
+		};
 		C74E624E24A3223900C060A1 /* XCRemoteSwiftPackageReference "ExtensionKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stleamist/ExtensionKit.git";
@@ -1065,6 +1077,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C70BFC8B24B16BD10061C054 /* Disk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C70BFC8A24B16BD10061C054 /* XCRemoteSwiftPackageReference "Disk" */;
+			productName = Disk;
+		};
 		C74E624F24A3223900C060A1 /* ExtensionKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C74E624E24A3223900C060A1 /* XCRemoteSwiftPackageReference "ExtensionKit" */;
