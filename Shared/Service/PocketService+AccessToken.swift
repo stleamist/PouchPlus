@@ -8,7 +8,7 @@ extension PocketService {
             baseURL.appendingPathComponent("/oauth/authorize"),
             method: .post,
             parameters: query,
-            encoder: parameterEncoder,
+            encoder: snakeCaseParameterEncoder,
             interceptor: AuthenticationInterceptor(consumerKey: consumerKey)
         )
         .publishDecodable(type: AccessTokenContent.self, decoder: decoder)

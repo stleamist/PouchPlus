@@ -9,7 +9,7 @@ extension PocketService {
             baseURL.appendingPathComponent("/send"),
             method: .post,
             parameters: query,
-            encoder: parameterEncoder,
+            encoder: snakeCaseParameterEncoder,
             interceptor: AuthenticationInterceptor(consumerKey: consumerKey, accessToken: accessToken)
         )
         .publishDecodable(type: ModificationContent.self, decoder: decoder)

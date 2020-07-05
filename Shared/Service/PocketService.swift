@@ -12,11 +12,17 @@ struct PocketService {
     let consumerKey: String
     let session: Session
     
-    let parameterEncoder: JSONParameterEncoder = {
+    let camelCaseParameterEncoder: JSONParameterEncoder = {
         let encoder = JSONEncoder()
-        // AuthenticationInterceptor가 담당하는 consumer_key, access_token만 스네이크 케이스를 사용하고
-        // 그 외에는 카멜 케이스를 사용한다.
+        // 항상 스네이크 케이스를 사용하는 consumer_key, access_token는 AuthenticationInterceptor가 직접 주입을 담당하므로 괜찮다.
         encoder.keyEncodingStrategy = .useDefaultKeys
+        let parameterEncoder = JSONParameterEncoder(encoder: encoder)
+        return parameterEncoder
+    }()
+    
+    let snakeCaseParameterEncoder: JSONParameterEncoder = {
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
         let parameterEncoder = JSONParameterEncoder(encoder: encoder)
         return parameterEncoder
     }()
