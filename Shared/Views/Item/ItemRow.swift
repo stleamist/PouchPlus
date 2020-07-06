@@ -205,9 +205,12 @@ struct ItemRow: View {
                     Label("Unfavorite", systemImage: "star.slash")
                 }
             }
-            Divider()
             Button(action: {}) {
                 Label("Edit Tags...", systemImage: "tag")
+            }
+            Divider()
+            Button(action: {}) {
+                Label("Share...", systemImage: "square.and.arrow.up")
             }
             Divider()
             Button(action: deleteItem) {
