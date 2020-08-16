@@ -64,7 +64,6 @@
 		C753296324A4D5FF006C1C08 /* PocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753295924A4D5FF006C1C08 /* PocketService.swift */; };
 		C753296C24A4D614006C1C08 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753296724A4D614006C1C08 /* ItemList.swift */; };
 		C753296D24A4D614006C1C08 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753296724A4D614006C1C08 /* ItemList.swift */; };
-		C753297024A4D663006C1C08 /* FullScreenSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = C753296F24A4D663006C1C08 /* FullScreenSafariView */; };
 		C753297324A4D74B006C1C08 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C753297224A4D74B006C1C08 /* SwiftyJSON */; };
 		C753297624A4D77A006C1C08 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C753297524A4D77A006C1C08 /* KingfisherSwiftUI */; };
 		C753297924A4D7A8006C1C08 /* FavIcon in Frameworks */ = {isa = PBXBuildFile; productRef = C753297824A4D7A8006C1C08 /* FavIcon */; };
@@ -91,6 +90,7 @@
 		C786E57A24A475E300459204 /* PouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57824A475E300459204 /* PouchView.swift */; };
 		C786E57E24A4897500459204 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57D24A4897500459204 /* AccountView.swift */; };
 		C786E57F24A4897500459204 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786E57D24A4897500459204 /* AccountView.swift */; };
+		C7E763F325158D8700FE060C /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = C7E763F225158D8700FE060C /* BetterSafariView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,9 +172,9 @@
 				C75329C824A5B43D006C1C08 /* KeychainAccess in Frameworks */,
 				C753297324A4D74B006C1C08 /* SwiftyJSON in Frameworks */,
 				C753297924A4D7A8006C1C08 /* FavIcon in Frameworks */,
-				C753297024A4D663006C1C08 /* FullScreenSafariView in Frameworks */,
 				C753297624A4D77A006C1C08 /* KingfisherSwiftUI in Frameworks */,
 				C70BFC8C24B16BD10061C054 /* Disk in Frameworks */,
+				C7E763F325158D8700FE060C /* BetterSafariView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +217,6 @@
 		C74E620424A3103F00C060A1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				C731243C24A7630900950F26 /* Localizable.strings */,
 				C74E620524A3103F00C060A1 /* PouchPlusApp.swift */,
 				C786E57B24A47F0A00459204 /* Models */,
 				C786E57C24A47F1800459204 /* Views */,
@@ -232,6 +231,7 @@
 				C780C69A24A492930022BC5A /* Components */,
 				C74E628E24A3B96000C060A1 /* Extensions */,
 				C74E620724A3104000C060A1 /* Assets.xcassets */,
+				C731243C24A7630900950F26 /* Localizable.strings */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -379,12 +379,12 @@
 			packageProductDependencies = (
 				C74E624F24A3223900C060A1 /* ExtensionKit */,
 				C74E625824A3256300C060A1 /* Alamofire */,
-				C753296F24A4D663006C1C08 /* FullScreenSafariView */,
 				C753297224A4D74B006C1C08 /* SwiftyJSON */,
 				C753297524A4D77A006C1C08 /* KingfisherSwiftUI */,
 				C753297824A4D7A8006C1C08 /* FavIcon */,
 				C75329C724A5B43D006C1C08 /* KeychainAccess */,
 				C70BFC8B24B16BD10061C054 /* Disk */,
+				C7E763F225158D8700FE060C /* BetterSafariView */,
 			);
 			productName = iOS;
 			productReference = C74E620C24A3104000C060A1 /* PouchPlus.app */;
@@ -481,12 +481,12 @@
 			packageReferences = (
 				C74E624E24A3223900C060A1 /* XCRemoteSwiftPackageReference "ExtensionKit" */,
 				C74E625724A3256300C060A1 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				C753296E24A4D663006C1C08 /* XCRemoteSwiftPackageReference "FullScreenSafariView" */,
 				C753297124A4D74B006C1C08 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				C753297424A4D77A006C1C08 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				C753297724A4D7A8006C1C08 /* XCRemoteSwiftPackageReference "FavIcon" */,
 				C75329C624A5B43D006C1C08 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				C70BFC8A24B16BD10061C054 /* XCRemoteSwiftPackageReference "Disk" */,
+				C7E763F125158D8700FE060C /* XCRemoteSwiftPackageReference "BetterSafariView" */,
 			);
 			productRefGroup = C74E620D24A3104000C060A1 /* Products */;
 			projectDirPath = "";
@@ -1034,14 +1034,6 @@
 				minimumVersion = 5.2.1;
 			};
 		};
-		C753296E24A4D663006C1C08 /* XCRemoteSwiftPackageReference "FullScreenSafariView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stleamist/FullScreenSafariView.git";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
 		C753297124A4D74B006C1C08 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -1074,6 +1066,14 @@
 				minimumVersion = 4.2.0;
 			};
 		};
+		C7E763F125158D8700FE060C /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stleamist/BetterSafariView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1091,11 +1091,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C74E625724A3256300C060A1 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		C753296F24A4D663006C1C08 /* FullScreenSafariView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C753296E24A4D663006C1C08 /* XCRemoteSwiftPackageReference "FullScreenSafariView" */;
-			productName = FullScreenSafariView;
 		};
 		C753297224A4D74B006C1C08 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1116,6 +1111,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C75329C624A5B43D006C1C08 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		C7E763F225158D8700FE060C /* BetterSafariView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7E763F125158D8700FE060C /* XCRemoteSwiftPackageReference "BetterSafariView" */;
+			productName = BetterSafariView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

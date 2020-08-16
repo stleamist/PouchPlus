@@ -1,9 +1,8 @@
 import SwiftUI
 import Combine
-import AuthenticationServices
 import Alamofire
 import ExtensionKit
-import FullScreenSafariView
+import BetterSafariView
 
 // Identifiable protocol conformances for webAuthenticationSession item binding
 // TODO: 분리된 파일로 옮기기
@@ -81,7 +80,7 @@ struct AuthenticationView: View {
                     "force": mode?.rawValue.lowercased()
                 ])
             return WebAuthenticationSession(url: url, callbackURLScheme: Constant.urlScheme) { callbackURL, error in
-                if let error = error, (error as? ASWebAuthenticationSessionError)?.code != .canceledLogin {
+                if let error = error, (error as? WebAuthenticationSessionError)?.code != .canceledLogin {
                     self.authorizationError = .commonError(.webAuthenticationSessionError(error))
                     return
                 }

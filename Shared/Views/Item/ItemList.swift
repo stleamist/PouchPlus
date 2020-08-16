@@ -1,5 +1,5 @@
 import SwiftUI
-import FullScreenSafariView
+import BetterSafariView
 
 struct ItemList: View {
     
